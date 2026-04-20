@@ -1,12 +1,14 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Heart, Menu, Search, ShoppingBag, User, X, MessageCircle, MapPin } from "lucide-react";
 import { useCart } from "@/store/cartStore";
 import { useFavorites } from "@/store/favoritesStore";
 import { categories } from "@/data/categories";
 import { brands } from "@/data/brands";
 import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { cn } from "@/lib/cn";
 import fr from "@/locales/fr.json";
 
 const waDisplay = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 4)} ${WHATSAPP_NUMBER.slice(4, 6)} ${WHATSAPP_NUMBER.slice(6, 8)} ${WHATSAPP_NUMBER.slice(8, 10)} ${WHATSAPP_NUMBER.slice(10)}`;
@@ -15,9 +17,22 @@ export function Header() {
   const count = useCart((s) => s.items.reduce((a, b) => a + b.quantity, 0));
   const favCount = useFavorites((s) => s.ids.length);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/95 backdrop-blur">
+    <header
+      className={cn(
+        "sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur transition-shadow",
+        scrolled ? "border-neutral-200 shadow-sm" : "border-neutral-100"
+      )}
+    >
       <div className="hidden md:block bg-brand-charcoal text-white text-xs">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 md:px-6 py-2">
           <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Casablanca, Maroc · Livraison partout au Maroc</span>
@@ -35,11 +50,17 @@ export function Header() {
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
 
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-red text-white font-black">H</span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-black tracking-tight text-brand-charcoal">HPCS</span>
-            <span className="hidden sm:inline text-[10px] uppercase tracking-widest text-neutral-500">Pièces chinoises · Maroc</span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/images/hpcs-logo.svg"
+            alt="HPCS"
+            width={120}
+            height={30}
+            className="h-7 w-auto md:h-8"
+            priority
+          />
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+            Pièces chinoises · Maroc
           </span>
         </Link>
 

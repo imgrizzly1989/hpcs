@@ -1,33 +1,42 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
+import type { Product } from "@/types";
+import { ProductVisual } from "@/components/product/ProductVisual";
 import { cn } from "@/lib/cn";
 
-export function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
+export function ProductGallery({ product }: { product: Product }) {
   const [idx, setIdx] = useState(0);
-  const list = images.length > 0 ? images : ["/images/products/parts1.jpg"];
+  const views = ["Vue 1", "Vue 2", "Vue 3"];
+
   return (
     <div>
-      <div className="relative aspect-square overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
-        <Image src={list[idx]} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
+      <div className="relative aspect-square overflow-hidden rounded-2xl border border-neutral-200">
+        <ProductVisual
+          product={product}
+          size="gallery"
+          variantLabel={views[idx]}
+        />
       </div>
-      {list.length > 1 && (
-        <div className="mt-3 flex gap-2 overflow-x-auto">
-          {list.map((src, i) => (
-            <button
-              key={i}
-              onClick={() => setIdx(i)}
-              aria-label={`Image ${i + 1}`}
-              className={cn(
-                "relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border bg-neutral-50",
-                i === idx ? "border-brand-red ring-2 ring-brand-red/30" : "border-neutral-200"
-              )}
-            >
-              <Image src={src} alt="" fill sizes="80px" className="object-cover" />
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="mt-3 grid grid-cols-3 gap-2">
+        {views.map((label, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            aria-label={label}
+            className={cn(
+              "relative aspect-square overflow-hidden rounded-xl border transition",
+              i === idx
+                ? "border-brand-red ring-2 ring-brand-red/30"
+                : "border-neutral-200 hover:border-neutral-400"
+            )}
+          >
+            <ProductVisual product={product} size="thumb" />
+            <span className="absolute bottom-1 left-1 rounded bg-white/90 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-widest text-neutral-700">
+              {label}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

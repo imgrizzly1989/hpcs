@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { Heart, MessageCircle } from "lucide-react";
 import toast from "react-hot-toast";
 import type { Product } from "@/types";
 import { PriceOnRequest } from "@/components/ui/PriceOnRequest";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { ProductVisual } from "@/components/product/ProductVisual";
 import { useFavorites } from "@/store/favoritesStore";
 import { useCart } from "@/store/cartStore";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -45,17 +45,11 @@ export function ProductCard({ product }: { product: Product }) {
   });
 
   return (
-    <Card className="group overflow-hidden flex flex-col">
+    <Card className="group overflow-hidden flex flex-col transition hover:shadow-lg">
       <Link href={`/produit/${product.slug}`} className="block">
-        <div className="relative aspect-square bg-neutral-50">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 768px) 50vw, 25vw"
-            className="object-cover transition duration-500 group-hover:scale-105"
-          />
-          <div className="absolute left-3 top-3 flex flex-col gap-1">
+        <div className="relative aspect-square">
+          <ProductVisual product={product} size="card" />
+          <div className="absolute left-3 top-3 z-10 flex flex-col gap-1">
             {product.isNew && <Badge tone="danger">Nouveau</Badge>}
             {product.stock === 0 ? (
               <Badge tone="default">Rupture</Badge>
@@ -66,7 +60,7 @@ export function ProductCard({ product }: { product: Product }) {
           <button
             onClick={onFav}
             aria-label={isFav ? "Retirer des favoris" : "Ajouter aux favoris"}
-            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 shadow-sm transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
+            className="absolute right-3 bottom-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-neutral-200 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
           >
             <Heart className={cn("h-4 w-4", isFav ? "fill-brand-red text-brand-red" : "text-brand-charcoal")} />
           </button>

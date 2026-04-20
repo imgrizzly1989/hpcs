@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import { brands } from "@/data/brands";
 import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
@@ -41,7 +42,14 @@ export function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-white">Marques chinoises</h3>
             <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm">
               {brands.map((b) => (
-                <li key={b.slug}><Link href={`/marque/${b.slug}`} className="hover:text-brand-red">{b.name}</Link></li>
+                <li key={b.slug}>
+                  <Link href={`/marque/${b.slug}`} className="inline-flex items-center gap-2 hover:text-brand-red">
+                    <span className="flex h-5 w-8 shrink-0 items-center justify-center rounded bg-white/5 p-0.5">
+                      <Image src={b.logo} alt="" width={32} height={16} className="max-h-4 w-auto object-contain" />
+                    </span>
+                    {b.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

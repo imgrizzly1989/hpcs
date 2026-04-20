@@ -62,7 +62,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       />
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <ProductGallery images={product.images} alt={product.name} />
+        <ProductGallery product={product} />
 
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center gap-2">

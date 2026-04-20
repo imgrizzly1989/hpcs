@@ -8,6 +8,7 @@ export interface Brand {
   country: string;
   founded: number;
   description: string;
+  logo: string;
 }
 
 export interface Model {
@@ -47,8 +48,8 @@ export interface Product {
   price: number;
   oldPrice?: number;
   stock: number;
-  image: string;
-  images: string[];
+  image?: string;
+  images?: string[];
   description: string;
   specs: Record<string, string>;
   isNew?: boolean;
@@ -59,7 +60,7 @@ export interface CartItem {
   slug: string;
   name: string;
   price: number;
-  image: string;
+  image?: string;
   reference: string;
   quantity: number;
 }

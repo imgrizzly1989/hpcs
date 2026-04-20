@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ShopClient } from "@/components/shop/ShopClient";
@@ -30,10 +31,21 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-6 py-8 md:py-12">
       <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Marques" }, { label: brand.name }]} />
-      <div className="mt-4">
-        <p className="text-xs font-bold uppercase tracking-widest text-brand-red">MARQUE</p>
-        <h1 className="mt-2 font-display text-3xl md:text-4xl font-bold tracking-tight text-brand-charcoal">Pièces {brand.name}</h1>
-        <p className="mt-2 max-w-3xl text-neutral-600 leading-relaxed">{brand.description}</p>
+      <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-center">
+        <div className="flex h-24 w-40 shrink-0 items-center justify-center rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+          <Image
+            src={brand.logo}
+            alt={`${brand.name} logo`}
+            width={160}
+            height={80}
+            className="max-h-16 w-auto object-contain"
+          />
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">Marque</p>
+          <h1 className="mt-2 font-display text-3xl md:text-4xl font-bold tracking-tight text-brand-charcoal">Pièces {brand.name}</h1>
+          <p className="mt-2 max-w-3xl text-neutral-600 leading-relaxed">{brand.description}</p>
+        </div>
       </div>
 
       {catsAvailable.length > 0 && (

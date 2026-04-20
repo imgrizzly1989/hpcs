@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
-import { Minus, Plus, Trash2, MessageCircle } from "lucide-react";
+import { Minus, Plus, Trash2, MessageCircle, Package } from "lucide-react";
 import { useCart } from "@/store/cartStore";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -30,8 +29,15 @@ export default function CartPage() {
           <div className="space-y-3">
             {items.map((it) => (
               <div key={it.id} className="flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4">
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-neutral-50">
-                  <Image src={it.image} alt={it.name} fill sizes="80px" className="object-cover" />
+                <div
+                  className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 flex items-center justify-center"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(rgba(23,23,23,0.1) 1px, transparent 1px)",
+                    backgroundSize: "8px 8px",
+                  }}
+                >
+                  <Package className="h-8 w-8 text-neutral-400" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <Link href={`/produit/${it.slug}`} className="line-clamp-2 text-sm font-semibold text-brand-charcoal hover:text-brand-red">{it.name}</Link>
