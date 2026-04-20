@@ -3,7 +3,6 @@ import { VehicleSelector } from "@/components/home/VehicleSelector";
 import { BrandsGrid } from "@/components/home/BrandsGrid";
 import { CategoriesGrid } from "@/components/home/CategoriesGrid";
 import { HowToOrder } from "@/components/home/HowToOrder";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { WhyHPCS } from "@/components/home/WhyHPCS";
 import { TrustStats } from "@/components/home/TrustStats";
 import { Newsletter } from "@/components/home/Newsletter";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <BrandsGrid />
       <CategoriesGrid />
       <HowToOrder />
-      <FeaturedProducts />
       <WhyHPCS />
       <TrustStats />
       <FAQSection />
