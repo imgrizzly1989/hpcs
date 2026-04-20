@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "brands": "Marques",
+    "categories": "Catégories",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "favorites": "Favoris",
+    "cart": "Panier",
+    "account": "Compte",
+    "login": "Connexion",
+    "signup": "Inscription"
+  },
+  "cta": {
+    "addToCart": "Ajouter au panier",
+    "buyNow": "Commander",
+    "whatsapp": "Commander par WhatsApp",
+    "checkout": "Passer la commande",
+    "continue": "Continuer mes achats",
+    "subscribe": "S'inscrire",
+    "search": "Rechercher"
+  },
+  "trust": {
+    "delivery": "Livraison 24-72h au Maroc",
+    "cod": "Paiement à la livraison",
+    "compat": "Pièces 100% compatibles",
+    "support": "Support WhatsApp 7j/7",
+    "warranty": "Garantie sur commandes"
+  },
+  "vehicle": {
+    "title": "Trouvez la pièce exacte pour votre voiture",
+    "brand": "Marque",
+    "model": "Modèle",
+    "year": "Année",
+    "engine": "Moteur",
+    "selectBrand": "Choisir une marque",
+    "selectModel": "Choisir un modèle",
+    "selectYear": "Choisir une année",
+    "selectEngine": "Choisir un moteur",
+    "submit": "Rechercher les pièces"
+  },
+  "shop": {
+    "filters": "Filtres",
+    "sort": "Trier",
+    "relevance": "Pertinence",
+    "priceAsc": "Prix croissant",
+    "priceDesc": "Prix décroissant",
+    "newest": "Nouveautés",
+    "inStockOnly": "En stock uniquement",
+    "price": "Prix",
+    "resultCount": "résultats",
+    "noResults": "Aucun produit ne correspond à votre recherche."
+  },
+  "product": {
+    "inStock": "En stock",
+    "outOfStock": "Rupture",
+    "reference": "Référence",
+    "specs": "Caractéristiques",
+    "compatibility": "Compatibilité véhicules",
+    "related": "Produits similaires",
+    "description": "Description"
+  },
+  "cart": {
+    "title": "Mon panier",
+    "empty": "Votre panier est vide.",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison calculée à l'étape suivante",
+    "total": "Total",
+    "remove": "Retirer"
+  },
+  "checkout": {
+    "title": "Validation de commande",
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "phone": "Téléphone",
+    "city": "Ville",
+    "address": "Adresse",
+    "notes": "Notes (facultatif)",
+    "payment": "Mode de paiement",
+    "cod": "Paiement à la livraison",
+    "card": "Carte bancaire (bientôt disponible)",
+    "whatsapp": "Finaliser sur WhatsApp",
+    "place": "Confirmer la commande"
+  },
+  "newsletter": {
+    "title": "Restez informé",
+    "subtitle": "Nouveautés, promos et disponibilité des pièces.",
+    "placeholder": "Votre email",
+    "success": "Merci, vous êtes inscrit à la newsletter HPCS"
+  },
+  "footer": {
+    "about": "À propos",
+    "help": "Aide",
+    "legal": "Informations légales",
+    "delivery": "Livraison & Retours",
+    "privacy": "Confidentialité",
+    "terms": "Conditions générales",
+    "rights": "Tous droits réservés"
+  }
+}

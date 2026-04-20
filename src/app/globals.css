@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  @apply bg-white text-brand-charcoal antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* focus ring always visible on keyboard navigation */
+:focus-visible { outline: 2px solid #E11D2E; outline-offset: 2px; }
+
+/* reserve space for mobile bottom nav */
+@media (max-width: 767px) {
+  body { padding-bottom: 68px; }
+}

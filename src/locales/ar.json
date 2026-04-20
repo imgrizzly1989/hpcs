@@ -1,0 +1,12 @@
+{
+  "nav": { "home": "", "shop": "", "brands": "", "categories": "", "faq": "", "contact": "", "favorites": "", "cart": "", "account": "", "login": "", "signup": "" },
+  "cta": { "addToCart": "", "buyNow": "", "whatsapp": "", "checkout": "", "continue": "", "subscribe": "", "search": "" },
+  "trust": { "delivery": "", "cod": "", "compat": "", "support": "", "warranty": "" },
+  "vehicle": { "title": "", "brand": "", "model": "", "year": "", "engine": "", "selectBrand": "", "selectModel": "", "selectYear": "", "selectEngine": "", "submit": "" },
+  "shop": { "filters": "", "sort": "", "relevance": "", "priceAsc": "", "priceDesc": "", "newest": "", "inStockOnly": "", "price": "", "resultCount": "", "noResults": "" },
+  "product": { "inStock": "", "outOfStock": "", "reference": "", "specs": "", "compatibility": "", "related": "", "description": "" },
+  "cart": { "title": "", "empty": "", "subtotal": "", "shipping": "", "total": "", "remove": "" },
+  "checkout": { "title": "", "firstname": "", "lastname": "", "phone": "", "city": "", "address": "", "notes": "", "payment": "", "cod": "", "card": "", "whatsapp": "", "place": "" },
+  "newsletter": { "title": "", "subtitle": "", "placeholder": "", "success": "" },
+  "footer": { "about": "", "help": "", "legal": "", "delivery": "", "privacy": "", "terms": "", "rights": "" }
+}
