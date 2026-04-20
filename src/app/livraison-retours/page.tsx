@@ -12,7 +12,7 @@ export default function DeliveryPage() {
         <h2 className="font-display text-xl font-bold">Délais de livraison</h2>
         <p>Nous livrons partout au Maroc en 24 à 72 heures selon la ville. Les grandes agglomérations (Casablanca, Rabat, Marrakech, Tanger, Fès) sont généralement livrées sous 24h.</p>
         <h2 className="font-display text-xl font-bold">Frais de livraison</h2>
-        <p>Les frais sont calculés selon le poids, le volume et la destination. Livraison gratuite dès 1 500 MAD d&apos;achat.</p>
+        <p>Les frais sont calculés selon le poids, le volume et la destination. Livraison offerte pour les commandes importantes — condition communiquée lors du devis.</p>
         <h2 className="font-display text-xl font-bold">Paiement à la livraison</h2>
         <p>Paiement en cash à la réception, disponible partout au Maroc.</p>
         <h2 className="font-display text-xl font-bold">Politique de retour</h2>

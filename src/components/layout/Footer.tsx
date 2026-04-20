@@ -1,38 +1,45 @@
 import Link from "next/link";
+import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import { brands } from "@/data/brands";
-import { categories } from "@/data/categories";
-import { CheckCircle2 } from "lucide-react";
+import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-neutral-200 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-12">
+    <footer className="mt-20 bg-brand-charcoal text-neutral-300">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-16">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-red text-white font-black">H</span>
-              <span className="font-display text-xl font-black text-brand-charcoal">HPCS</span>
+              <span className="font-display text-xl font-black text-white">HPCS</span>
             </div>
-            <p className="mt-3 text-sm text-neutral-600">Hamza Parts &amp; Components Supply — votre spécialiste des pièces automobiles chinoises au Maroc.</p>
-            <ul className="mt-4 space-y-1.5 text-xs text-neutral-600">
-              {["Livraison 24-72h au Maroc", "Paiement à la livraison", "Pièces 100% compatibles", "Support WhatsApp 7j/7", "Garantie sur commandes"].map((t) => (
-                <li key={t} className="flex items-center gap-1.5"><CheckCircle2 className="h-3.5 w-3.5 text-brand-red" /> {t}</li>
-              ))}
+            <p className="mt-3 text-sm leading-relaxed text-neutral-400">Hamza Parts &amp; Components Supply — votre spécialiste des pièces automobiles chinoises au Maroc.</p>
+            <ul className="mt-5 space-y-2 text-sm text-neutral-400">
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> Casablanca, Maroc</li>
+              <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> +{WHATSAPP_NUMBER}</li>
+              <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> contact@hpcs.ma</li>
+              <li>
+                <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2 text-sm font-bold text-white hover:bg-[#1ebe57]">
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal">Catégories</h3>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600">
-              {categories.slice(0, 7).map((c) => (
-                <li key={c.slug}><Link href={`/categorie/${c.slug}`} className="hover:text-brand-red">{c.name}</Link></li>
-              ))}
+            <h3 className="text-sm font-bold uppercase tracking-widest text-white">Navigation</h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><Link href="/boutique" className="hover:text-brand-red">Boutique</Link></li>
+              <li><Link href="/vehicule" className="hover:text-brand-red">Choisir ma voiture</Link></li>
+              <li><Link href="/faq" className="hover:text-brand-red">FAQ</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-red">Contact</Link></li>
+              <li><Link href="/a-propos" className="hover:text-brand-red">À propos</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal">Marques</h3>
-            <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm text-neutral-600">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-white">Marques chinoises</h3>
+            <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm">
               {brands.map((b) => (
                 <li key={b.slug}><Link href={`/marque/${b.slug}`} className="hover:text-brand-red">{b.name}</Link></li>
               ))}
@@ -40,21 +47,24 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-brand-charcoal">Informations</h3>
-            <ul className="mt-4 space-y-2 text-sm text-neutral-600">
-              <li><Link href="/a-propos" className="hover:text-brand-red">À propos</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-red">Contact</Link></li>
-              <li><Link href="/faq" className="hover:text-brand-red">FAQ</Link></li>
-              <li><Link href="/livraison-retours" className="hover:text-brand-red">Livraison &amp; Retours</Link></li>
-              <li><Link href="/confidentialite" className="hover:text-brand-red">Confidentialité</Link></li>
-              <li><Link href="/conditions" className="hover:text-brand-red">Conditions générales</Link></li>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-white">Informations légales</h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><Link href="/mentions-legales" className="hover:text-brand-red">Mentions légales</Link></li>
+              <li><Link href="/confidentialite" className="hover:text-brand-red">Politique de confidentialité</Link></li>
+              <li><Link href="/conditions" className="hover:text-brand-red">Conditions générales de vente</Link></li>
+              <li><Link href="/livraison-retours" className="hover:text-brand-red">Conditions de livraison</Link></li>
+              <li><Link href="/livraison-retours" className="hover:text-brand-red">Politique de retours</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-neutral-200 pt-6 text-xs text-neutral-500 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex-row">
           <p>© {new Date().getFullYear()} HPCS — Hamza Parts &amp; Components Supply. Tous droits réservés.</p>
-          <p>Conçu au Maroc · fr-MA</p>
+          <div className="flex items-center gap-4">
+            <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer" className="hover:text-white" aria-label="WhatsApp">WhatsApp</a>
+            <a href="#" className="hover:text-white" aria-label="Facebook">Facebook</a>
+            <a href="#" className="hover:text-white" aria-label="Instagram">Instagram</a>
+          </div>
         </div>
       </div>
     </footer>

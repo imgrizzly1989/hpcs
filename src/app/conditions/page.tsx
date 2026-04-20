@@ -12,10 +12,10 @@ export default function TermsPage() {
         <p>Les présentes conditions régissent les ventes effectuées via le site HPCS.</p>
         <h2 className="font-display text-xl font-bold">1. Commandes</h2>
         <p>Toute commande implique l&apos;acceptation des présentes CGV. La validation se fait en ligne ou via WhatsApp.</p>
-        <h2 className="font-display text-xl font-bold">2. Prix</h2>
-        <p>Les prix sont indiqués en Dirhams marocains (MAD) TTC, hors frais de livraison.</p>
+        <h2 className="font-display text-xl font-bold">2. Prix et devis</h2>
+        <p>Les prix ne sont pas affichés publiquement. Chaque devis est établi sur demande via WhatsApp ou formulaire, selon le véhicule et la référence exacte. Les montants communiqués sont en Dirhams marocains (MAD) TTC, hors frais de livraison.</p>
         <h2 className="font-display text-xl font-bold">3. Paiement</h2>
-        <p>Paiement à la livraison en cash. Paiement par carte bancaire bientôt disponible.</p>
+        <p>Paiement à la livraison en cash après confirmation du devis.</p>
         <h2 className="font-display text-xl font-bold">4. Livraison</h2>
         <p>Voir la page Livraison &amp; Retours.</p>
         <h2 className="font-display text-xl font-bold">5. Garantie et responsabilité</h2>

@@ -2,8 +2,10 @@ import { Hero } from "@/components/home/Hero";
 import { VehicleSelector } from "@/components/home/VehicleSelector";
 import { BrandsGrid } from "@/components/home/BrandsGrid";
 import { CategoriesGrid } from "@/components/home/CategoriesGrid";
+import { HowToOrder } from "@/components/home/HowToOrder";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { WhyHPCS } from "@/components/home/WhyHPCS";
+import { TrustStats } from "@/components/home/TrustStats";
 import { Newsletter } from "@/components/home/Newsletter";
 import { FAQSection } from "@/components/home/FAQSection";
 
@@ -11,13 +13,15 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <section className="mx-auto -mt-6 max-w-7xl px-4">
+      <section className="mx-auto max-w-7xl px-4 md:px-6 -mt-10 relative z-10">
         <VehicleSelector />
       </section>
       <BrandsGrid />
       <CategoriesGrid />
+      <HowToOrder />
       <FeaturedProducts />
       <WhyHPCS />
+      <TrustStats />
       <FAQSection />
       <Newsletter />
     </>

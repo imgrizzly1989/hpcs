@@ -9,7 +9,6 @@ interface CartState {
   remove: (id: string) => void;
   setQty: (id: string, qty: number) => void;
   clear: () => void;
-  total: () => number;
   count: () => number;
 }
 
@@ -38,7 +37,6 @@ export const useCart = create<CartState>()(
           items: s.items.map((i) => (i.id === id ? { ...i, quantity: Math.max(1, qty) } : i)),
         })),
       clear: () => set({ items: [] }),
-      total: () => get().items.reduce((sum, i) => sum + i.price * i.quantity, 0),
       count: () => get().items.reduce((sum, i) => sum + i.quantity, 0),
     }),
     { name: "hpcs-cart" }

@@ -11,16 +11,16 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const variants: Record<Variant, string> = {
-  primary: "bg-brand-red text-white hover:bg-red-700 focus:ring-brand-red",
-  secondary: "bg-brand-charcoal text-white hover:bg-neutral-800 focus:ring-brand-charcoal",
-  outline: "border border-neutral-300 text-brand-charcoal hover:bg-neutral-50 focus:ring-neutral-400",
-  ghost: "text-brand-charcoal hover:bg-neutral-100",
-  whatsapp: "bg-[#25D366] text-white hover:bg-[#1ebe57] focus:ring-[#25D366]",
+  primary: "bg-brand-red text-white hover:bg-red-700 hover:shadow-lg focus-visible:ring-brand-red",
+  secondary: "bg-brand-charcoal text-white hover:bg-neutral-800 focus-visible:ring-brand-charcoal",
+  outline: "border border-neutral-300 text-brand-charcoal bg-white hover:bg-neutral-50 focus-visible:ring-neutral-400",
+  ghost: "text-brand-charcoal hover:bg-neutral-100 focus-visible:ring-neutral-300",
+  whatsapp: "bg-[#25D366] text-white hover:bg-[#1ebe57] hover:shadow-lg focus-visible:ring-[#25D366]",
 };
 const sizes: Record<Size, string> = {
   sm: "h-9 px-3 text-sm",
   md: "h-11 px-5 text-sm",
-  lg: "h-12 px-6 text-base",
+  lg: "min-h-14 px-6 text-base md:min-h-12",
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -28,7 +28,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     <button
       ref={ref}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-2xl font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed",
+        "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed",
         variants[variant],
         sizes[size],
         className

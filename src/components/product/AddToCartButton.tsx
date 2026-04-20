@@ -13,16 +13,16 @@ export function AddToCartButton({ product }: { product: Product }) {
 
   const onClick = () => {
     add(product, qty);
-    toast.success(`${qty} × ${product.name} ajouté au panier`);
+    toast.success(`${qty} × ${product.name} ajouté à ma demande`);
   };
 
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-      <div className="flex items-center rounded-2xl border border-neutral-300">
+      <div className="flex items-center rounded-xl border border-neutral-300 bg-white">
         <button
           aria-label="Diminuer"
           onClick={() => setQty((q) => Math.max(1, q - 1))}
-          className="h-11 w-11 flex items-center justify-center hover:bg-neutral-50"
+          className="h-12 w-12 flex items-center justify-center hover:bg-neutral-50"
         >
           <Minus className="h-4 w-4" />
         </button>
@@ -30,14 +30,14 @@ export function AddToCartButton({ product }: { product: Product }) {
         <button
           aria-label="Augmenter"
           onClick={() => setQty((q) => q + 1)}
-          className="h-11 w-11 flex items-center justify-center hover:bg-neutral-50"
+          className="h-12 w-12 flex items-center justify-center hover:bg-neutral-50"
         >
           <Plus className="h-4 w-4" />
         </button>
       </div>
-      <Button onClick={onClick} disabled={disabled} size="lg" className="flex-1">
+      <Button variant="outline" onClick={onClick} disabled={disabled} size="lg" className="flex-1">
         <ShoppingBag className="h-5 w-5" />
-        {disabled ? "Indisponible" : "Ajouter au panier"}
+        {disabled ? "Indisponible" : "Ajouter à ma demande de devis"}
       </Button>
     </div>
   );

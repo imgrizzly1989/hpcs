@@ -1,18 +1,19 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ShieldCheck, CheckCircle2, Truck, MessageCircle } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Badge } from "@/components/ui/Badge";
-import { PriceTag } from "@/components/ui/PriceTag";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductSpecs } from "@/components/product/ProductSpecs";
 import { AddToCartButton } from "@/components/product/AddToCartButton";
-import { WhatsAppOrderButton } from "@/components/product/WhatsAppOrderButton";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { products, getProduct } from "@/data/products";
 import { getCategory } from "@/data/categories";
 import { getBrand } from "@/data/brands";
 import { getVehiclesForBrand } from "@/data/vehicles";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -21,7 +22,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const p = getProduct(params.slug);
   if (!p) return buildMetadata({ title: "Produit" });
-  return buildMetadata({ title: p.name, description: p.description, path: `/produit/${p.slug}` });
+  const firstSentence = p.description.split(".")[0] + ".";
+  return buildMetadata({
+    title: p.name,
+    description: `${firstSentence} Prix sur demande via WhatsApp — livraison au Maroc.`,
+    path: `/produit/${p.slug}`,
+  });
 }
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
@@ -36,8 +42,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     { name: product.name, url: `/produit/${product.slug}` },
   ]);
 
+  const waHref = buildWhatsAppLink({
+    productName: product.name,
+    reference: product.reference,
+    path: `/produit/${product.slug}`,
+  });
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 md:px-6 py-8 md:py-12 pb-28 md:pb-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
       <Breadcrumb
@@ -49,45 +61,66 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         ]}
       />
 
-      <div className="mt-6 grid gap-8 md:grid-cols-2">
+      <div className="mt-6 grid gap-10 md:grid-cols-2">
         <ProductGallery images={product.images} alt={product.name} />
 
         <div className="flex flex-col">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {product.isNew && <Badge tone="danger">Nouveau</Badge>}
             {product.stock > 0 ? (
               <Badge tone="success">En stock</Badge>
             ) : (
               <Badge tone="default">Rupture</Badge>
             )}
-            {category && <Link href={`/categorie/${category.slug}`} className="text-xs font-semibold uppercase tracking-wider text-neutral-500 hover:text-brand-red">{category.name}</Link>}
+            {category && (
+              <Link href={`/categorie/${category.slug}`} className="text-xs font-semibold uppercase tracking-widest text-neutral-500 hover:text-brand-red">
+                {category.name}
+              </Link>
+            )}
           </div>
 
-          <h1 className="mt-3 font-display text-2xl font-bold text-brand-charcoal md:text-3xl">{product.name}</h1>
-          <p className="mt-1 text-sm text-neutral-500">Référence : <span className="font-mono">{product.reference}</span></p>
+          <h1 className="mt-3 font-display text-2xl font-bold tracking-tight text-brand-charcoal md:text-3xl">{product.name}</h1>
+          <p className="mt-2 text-sm text-neutral-500">
+            Réf. OEM : <span className="font-mono text-brand-charcoal">{product.reference}</span>
+          </p>
 
-          <div className="mt-4">
-            <PriceTag price={product.price} oldPrice={product.oldPrice} className="text-2xl" />
-            <p className="mt-1 text-xs text-neutral-500">Prix TTC · Livraison en sus</p>
+          {/* Price-on-request block */}
+          <div className="mt-6 rounded-2xl bg-neutral-50 border border-neutral-200 p-6">
+            <p className="font-display text-2xl font-bold text-brand-charcoal">Prix sur demande</p>
+            <p className="mt-1 text-sm text-neutral-600 leading-relaxed">
+              Contactez-nous pour un devis personnalisé selon votre véhicule. Réponse en moins de 24h.
+            </p>
+            <div className="mt-5 flex flex-col gap-3">
+              <WhatsAppButton
+                productName={product.name}
+                reference={product.reference}
+                path={`/produit/${product.slug}`}
+                label="Demander le prix sur WhatsApp"
+                size="lg"
+              />
+              <AddToCartButton product={product} />
+            </div>
           </div>
 
-          <p className="mt-5 text-sm leading-relaxed text-neutral-700">{product.description}</p>
-
-          <div className="mt-6 flex flex-col gap-3">
-            <AddToCartButton product={product} />
-            <WhatsAppOrderButton productName={product.name} reference={product.reference} path={`/produit/${product.slug}`} />
+          {/* Trust chips */}
+          <div className="mt-5 grid gap-2 sm:grid-cols-3">
+            <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
+              <ShieldCheck className="h-4 w-4 text-brand-red shrink-0" /> 100% compatible
+            </div>
+            <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
+              <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" /> Vérifié par HPCS
+            </div>
+            <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
+              <Truck className="h-4 w-4 text-brand-red shrink-0" /> Livraison 24-72h
+            </div>
           </div>
 
-          <div className="mt-8">
-            <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-charcoal">Caractéristiques</h2>
-            <ProductSpecs specs={product.specs} />
-          </div>
-
-          <div className="mt-8">
-            <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-charcoal">Compatibilité véhicules</h2>
-            <div className="overflow-hidden rounded-2xl border border-neutral-200">
+          {/* Compatibility box */}
+          <div className="mt-8 rounded-2xl border border-neutral-200 border-l-4 border-l-brand-red bg-white p-5">
+            <h2 className="font-display text-lg font-bold text-brand-charcoal">Véhicules compatibles</h2>
+            <div className="mt-3 overflow-hidden rounded-xl border border-neutral-200">
               <table className="w-full text-sm">
-                <thead className="bg-neutral-50 text-xs uppercase tracking-wider text-neutral-500">
+                <thead className="bg-neutral-50 text-xs uppercase tracking-widest text-neutral-500">
                   <tr>
                     <th className="px-4 py-2 text-left">Marque</th>
                     <th className="px-4 py-2 text-left">Modèle</th>
@@ -112,10 +145,24 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </table>
             </div>
           </div>
+
+          <p className="mt-6 text-sm leading-relaxed text-neutral-700">{product.description}</p>
+
+          <div className="mt-8">
+            <h2 className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-charcoal">Caractéristiques</h2>
+            <ProductSpecs specs={product.specs} />
+          </div>
         </div>
       </div>
 
       <RelatedProducts current={product} />
+
+      {/* Sticky mobile CTA */}
+      <div className="md:hidden fixed bottom-[60px] inset-x-0 z-40 border-t border-neutral-200 bg-white p-3 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+        <a href={waHref} target="_blank" rel="noopener noreferrer" className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] font-bold text-white">
+          <MessageCircle className="h-5 w-5" /> Demander le prix sur WhatsApp
+        </a>
+      </div>
     </div>
   );
 }

@@ -4,20 +4,20 @@ import type { Product, FaqEntry } from "@/types";
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export function buildMetadata(opts: { title: string; description?: string; path?: string }): Metadata {
-  const title = `HPCS — ${opts.title}`;
   const description =
     opts.description ??
-    "HPCS : pièces automobiles pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK et plus.";
+    "HPCS : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK et plus. Devis WhatsApp, livraison 24-72h.";
   const url = `${SITE}${opts.path ?? "/"}`;
   return {
-    title,
+    title: opts.title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website", locale: "fr_MA" },
+    openGraph: { title: opts.title, description, url, type: "website", locale: "fr_MA" },
   };
 }
 
 export function productJsonLd(p: Product) {
+  // NOTE: intentionally no price offers since we show "Prix sur demande".
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -26,13 +26,6 @@ export function productJsonLd(p: Product) {
     description: p.description,
     sku: p.reference,
     brand: { "@type": "Brand", name: "HPCS" },
-    offers: {
-      "@type": "Offer",
-      url: `${SITE}/produit/${p.slug}`,
-      priceCurrency: "MAD",
-      price: p.price,
-      availability: p.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-    },
   };
 }
 

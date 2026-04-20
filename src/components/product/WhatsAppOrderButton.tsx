@@ -9,7 +9,7 @@ export function WhatsAppOrderButton({ productName, reference, path }: { productN
     <a href={href} target="_blank" rel="noopener noreferrer" className="flex-1">
       <Button variant="whatsapp" size="lg" className="w-full" type="button">
         <MessageCircle className="h-5 w-5" />
-        Commander par WhatsApp
+        Demander le prix sur WhatsApp
       </Button>
     </a>
   );
