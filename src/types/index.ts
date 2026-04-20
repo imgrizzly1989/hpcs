@@ -24,11 +24,18 @@ export interface BrandVehicles {
   models: Model[];
 }
 
+export interface Subcategory {
+  slug: string;
+  name: string;
+  description?: string;
+}
+
 export interface Category {
   slug: string;
   name: string;
   icon: string;
   description: string;
+  subcategories?: Subcategory[];
 }
 
 export interface CompatibilityEntry {
@@ -44,6 +51,8 @@ export interface Product {
   name: string;
   reference: string;
   category: string;
+  subcategory?: string;
+  position?: string;
   compatibleVehicles: CompatibilityEntry[];
   price: number;
   oldPrice?: number;

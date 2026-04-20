@@ -23,7 +23,12 @@ export function CategoriesGrid() {
                 <Icon className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-semibold text-brand-charcoal">{c.name}</p>
+                <div className="flex items-center gap-2">
+                  <p className="font-semibold text-brand-charcoal">{c.name}</p>
+                  {c.slug === "carrosserie" && (
+                    <span className="rounded-full bg-brand-red px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">Nouveau rayon</span>
+                  )}
+                </div>
                 <p className="mt-1 text-xs font-semibold text-brand-red">Voir les pièces →</p>
               </div>
             </Link>

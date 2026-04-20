@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, MessageCircle, Mail, Lock } from "lucide-react";
 import { brands } from "@/data/brands";
+import { carrosserieSubcategories } from "@/data/categories";
 import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
     <footer className="mt-20 bg-brand-charcoal text-neutral-300">
       <div className="mx-auto max-w-7xl px-4 md:px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-5">
           <div>
             <div className="flex items-center gap-2">
               <span className="relative block h-9 w-9 overflow-hidden rounded-xl bg-brand-red">
@@ -57,6 +58,18 @@ export function Footer() {
                     </span>
                     {b.name}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-white">Carrosserie</h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><Link href="/categorie/carrosserie" className="font-semibold hover:text-brand-red">Voir tout →</Link></li>
+              {carrosserieSubcategories.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/categorie/carrosserie/${s.slug}`} className="hover:text-brand-red">{s.name}</Link>
                 </li>
               ))}
             </ul>

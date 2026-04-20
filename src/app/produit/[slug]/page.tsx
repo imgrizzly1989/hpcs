@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ShieldCheck, CheckCircle2, Truck, MessageCircle } from "lucide-react";
+import { ShieldCheck, CheckCircle2, Truck, MessageCircle, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Badge } from "@/components/ui/Badge";
 import { ProductGallery } from "@/components/product/ProductGallery";
@@ -67,7 +67,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center gap-2">
             {product.isNew && <Badge tone="danger">Nouveau</Badge>}
-            {product.stock > 0 ? (
+            {product.category === "carrosserie" && product.stock === 0 ? (
+              <Badge tone="default">
+                <Clock className="mr-1 inline h-3 w-3" /> Sur commande — délai 5-10 jours
+              </Badge>
+            ) : product.stock > 0 ? (
               <Badge tone="success">En stock</Badge>
             ) : (
               <Badge tone="default">Rupture</Badge>
@@ -80,6 +84,25 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
 
           <h1 className="mt-3 font-display text-2xl font-bold tracking-tight text-brand-charcoal md:text-3xl">{product.name}</h1>
+
+          {/* Carrosserie position row */}
+          {product.category === "carrosserie" && (product.position || product.specs["Côté"]) && (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              {product.position && (
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-brand-charcoal">
+                  {/Avant/i.test(product.position) ? <ChevronUp className="h-3.5 w-3.5 text-brand-red" /> : /Arri/i.test(product.position) ? <ChevronDown className="h-3.5 w-3.5 text-brand-red" /> : null}
+                  Position : {product.position}
+                </span>
+              )}
+              {product.specs["Côté"] && product.specs["Côté"] !== "—" && (
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-brand-charcoal">
+                  {/Gauche/i.test(product.specs["Côté"]) ? <ChevronLeft className="h-3.5 w-3.5 text-brand-red" /> : <ChevronRight className="h-3.5 w-3.5 text-brand-red" />}
+                  Côté : {product.specs["Côté"]}
+                </span>
+              )}
+            </div>
+          )}
+
           <p className="mt-2 text-sm text-neutral-500">
             Réf. OEM : <span className="font-mono text-brand-charcoal">{product.reference}</span>
           </p>
@@ -95,7 +118,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 productName={product.name}
                 reference={product.reference}
                 path={`/produit/${product.slug}`}
-                label="Demander le prix sur WhatsApp"
+                label={product.category === "carrosserie" ? "Demander disponibilité et prix sur WhatsApp" : "Demander le prix sur WhatsApp"}
                 size="lg"
               />
               <AddToCartButton product={product} />
@@ -105,13 +128,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           {/* Trust chips */}
           <div className="mt-5 grid gap-2 sm:grid-cols-3">
             <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
-              <ShieldCheck className="h-4 w-4 text-brand-red shrink-0" /> 100% compatible
+              <ShieldCheck className="h-4 w-4 text-brand-red shrink-0" />
+              {product.category === "carrosserie" ? "Compatibilité à vérifier avec votre VIN" : "100% compatible"}
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
-              <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" /> Vérifié par HPCS
+              <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
+              {product.category === "carrosserie" ? "Retour garanti si non compatible" : "Vérifié par HPCS"}
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
-              <Truck className="h-4 w-4 text-brand-red shrink-0" /> Livraison 24-72h
+              <Truck className="h-4 w-4 text-brand-red shrink-0" />
+              {product.category === "carrosserie" ? "Livraison protégée 24-72h" : "Livraison 24-72h"}
             </div>
           </div>
 
