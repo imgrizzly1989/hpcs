@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, MessageCircle } from "lucide-react";
 import toast from "react-hot-toast";
 import type { Product } from "@/types";
@@ -11,12 +12,14 @@ import { useFavorites } from "@/store/favoritesStore";
 import { useCart } from "@/store/cartStore";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { getBrand } from "@/data/brands";
+import { getProductImage } from "@/lib/productImage";
 import { cn } from "@/lib/cn";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, photoUrl }: { product: Product; photoUrl?: string | null }) {
   const { ids, toggle } = useFavorites();
   const isFav = ids.includes(product.id);
   const add = useCart((s) => s.add);
+  const photo = photoUrl ?? getProductImage(product.name, product.category);
 
   const onFav = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -47,8 +50,36 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="group overflow-hidden flex flex-col transition hover:shadow-lg">
       <Link href={`/produit/${product.slug}`} className="block">
-        <div className="relative aspect-square">
-          <ProductVisual product={product} size="card" />
+        <div className="relative aspect-square bg-white">
+          {photo ? (
+            <>
+              <Image
+                src={photo}
+                alt={product.name}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-contain p-4"
+              />
+              {brand && (
+                <div className="absolute right-3 top-3 z-10">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-200 bg-white px-1.5 py-1 shadow-sm">
+                    <span className="relative block h-4 w-8">
+                      <Image src={brand.logo} alt={brand.name} fill sizes="32px" className="object-contain" />
+                    </span>
+                    <span className="text-[10px] font-bold text-neutral-700">{brand.name}</span>
+                  </span>
+                </div>
+              )}
+              <div className="absolute bottom-3 left-3 z-10">
+                <span className="inline-flex items-center rounded-md border border-neutral-200 bg-white px-2 py-1 text-[10px] font-mono font-semibold text-neutral-700 shadow-sm">
+                  {product.reference}
+                </span>
+              </div>
+              <div className="absolute bottom-2 right-3 text-[10px] font-bold tracking-widest text-neutral-300">HPCS</div>
+            </>
+          ) : (
+            <ProductVisual product={product} size="card" />
+          )}
           <div className="absolute left-3 top-3 z-10 flex flex-col gap-1">
             {product.isNew && <Badge tone="danger">Nouveau</Badge>}
             {product.stock === 0 ? (

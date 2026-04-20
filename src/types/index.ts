@@ -1,6 +1,6 @@
 export type BrandSlug =
   | "chery" | "geely" | "mg" | "dfsk" | "great-wall" | "haval"
-  | "jac" | "byd" | "baic" | "dongfeng" | "jetour" | "faw";
+  | "jac" | "byd" | "baic" | "dongfeng" | "jetour" | "faw" | "changan";
 
 export interface Brand {
   slug: BrandSlug;
@@ -53,6 +53,7 @@ export interface Product {
   description: string;
   specs: Record<string, string>;
   isNew?: boolean;
+  isFeatured?: boolean;
 }
 
 export interface CartItem {

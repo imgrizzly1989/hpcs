@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
-  title: "Boutique — Toutes les pièces automobiles",
+  title: "Boutique",
   description: "Boutique HPCS : catalogue complet de pièces pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD. Devis WhatsApp, livraison 24-72h.",
   path: "/boutique",
 });

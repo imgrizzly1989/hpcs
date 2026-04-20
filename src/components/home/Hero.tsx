@@ -20,10 +20,10 @@ export function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-brand-red" /> Spécialiste voitures chinoises · Maroc
           </span>
           <h1 className="mt-5 font-display text-3xl sm:text-4xl font-bold leading-[1.05] tracking-tight text-brand-charcoal md:text-6xl">
-            Pièces d&apos;origine pour <span className="text-brand-red">voitures chinoises</span> au Maroc
+            Le spécialiste des pièces pour <span className="text-brand-red">voitures chinoises</span> au Maroc
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg">
-            Chery · Geely · Haval · MG · BYD · JAC · Great Wall · DFSK · BAIC · Dongfeng · Jetour · FAW — trouvez la pièce exacte pour votre véhicule et commandez en 1 clic via WhatsApp.
+            Plus de 150 références en stock pour Chery, Geely, MG, Haval, BYD, Changan, JAC et toutes les marques chinoises présentes au Maroc. Devis WhatsApp instantané.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer">
@@ -43,7 +43,7 @@ export function Hero() {
           <div className="relative w-full max-w-lg rounded-3xl border border-neutral-200 bg-white p-8 shadow-xl md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">Marques couvertes</p>
             <h2 className="mt-2 font-display text-xl font-bold tracking-tight text-brand-charcoal">
-              12 marques, pièces d&apos;origine vérifiées
+              13 marques, pièces d&apos;origine vérifiées
             </h2>
             <div className="mt-6 grid grid-cols-3 gap-3">
               {heroBrands.map((b) => (
@@ -67,7 +67,7 @@ export function Hero() {
               href="#marques"
               className="mt-6 block text-center text-xs font-semibold text-neutral-500 hover:text-brand-red"
             >
-              Voir les 12 marques →
+              Voir les 13 marques →
             </Link>
           </div>
         </div>

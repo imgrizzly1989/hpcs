@@ -1,9 +1,12 @@
 import { Hero } from "@/components/home/Hero";
 import { VehicleSelector } from "@/components/home/VehicleSelector";
 import { BrandsGrid } from "@/components/home/BrandsGrid";
+import { TopVehicles } from "@/components/home/TopVehicles";
 import { CategoriesGrid } from "@/components/home/CategoriesGrid";
+import { TopParts } from "@/components/home/TopParts";
 import { HowToOrder } from "@/components/home/HowToOrder";
 import { WhyHPCS } from "@/components/home/WhyHPCS";
+import { Testimonials } from "@/components/home/Testimonials";
 import { TrustStats } from "@/components/home/TrustStats";
 import { Newsletter } from "@/components/home/Newsletter";
 import { FAQSection } from "@/components/home/FAQSection";
@@ -16,9 +19,12 @@ export default function HomePage() {
         <VehicleSelector />
       </section>
       <BrandsGrid />
+      <TopVehicles />
       <CategoriesGrid />
+      <TopParts />
       <HowToOrder />
       <WhyHPCS />
+      <Testimonials />
       <TrustStats />
       <FAQSection />
       <Newsletter />

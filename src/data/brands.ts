@@ -15,6 +15,7 @@ export const brands: Brand[] = [
   { slug: "dongfeng", name: "Dongfeng", country: "Chine", founded: 1969, description: "L'un des plus grands constructeurs chinois.", logo: L("dongfeng", "svg") },
   { slug: "jetour", name: "Jetour", country: "Chine", founded: 2018, description: "Sous-marque de Chery, orientée SUV familiaux.", logo: L("jetour", "svg") },
   { slug: "faw", name: "FAW", country: "Chine", founded: 1953, description: "First Automobile Works, pionnier de l'industrie chinoise.", logo: L("faw", "png") },
+  { slug: "changan", name: "Changan", country: "Chine", founded: 1862, description: "L'un des plus anciens constructeurs chinois, SUV et berlines (CS35, CS55, CS75).", logo: L("changan", "svg") },
 ];
 
 export const getBrand = (slug: string) => brands.find((b) => b.slug === slug);

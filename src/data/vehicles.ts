@@ -57,7 +57,7 @@ export const vehicles: BrandVehicles[] = [
     models: [
       { slug: "jolion", name: "Jolion", yearStart: 2021, engines: ["1.5T"] },
       { slug: "h6", name: "H6", yearStart: 2011, engines: ["1.5T", "2.0T"] },
-      { slug: "h2", name: "H2", yearStart: 2014, engines: ["1.5T"] },
+      { slug: "h2", name: "H2", yearStart: 2014, yearEnd: 2022, engines: ["1.5T"] },
       { slug: "f7", name: "F7", yearStart: 2019, engines: ["1.5T", "2.0T"] },
       { slug: "h9", name: "H9", yearStart: 2014, engines: ["2.0T"] },
     ],
@@ -117,6 +117,16 @@ export const vehicles: BrandVehicles[] = [
       { slug: "bestune-t99", name: "Bestune T99", yearStart: 2019, engines: ["2.0T"] },
       { slug: "besturn-b30", name: "Besturn B30", yearStart: 2015, engines: ["1.6L"] },
       { slug: "junpai", name: "Junpai", yearStart: 2016, engines: ["1.5L"] },
+    ],
+  },
+  {
+    brandSlug: "changan",
+    models: [
+      { slug: "cs35-plus", name: "CS35 Plus", yearStart: 2018, engines: ["1.6L", "1.4T"] },
+      { slug: "cs55", name: "CS55", yearStart: 2018, engines: ["1.5T"] },
+      { slug: "cs75", name: "CS75 Plus", yearStart: 2019, engines: ["1.5T", "2.0T"] },
+      { slug: "eado", name: "Eado", yearStart: 2016, engines: ["1.6L"] },
+      { slug: "alsvin", name: "Alsvin", yearStart: 2019, engines: ["1.5L"] },
     ],
   },
 ];

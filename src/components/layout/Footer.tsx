@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Mail, Lock } from "lucide-react";
 import { brands } from "@/data/brands";
 import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
@@ -11,20 +11,28 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-red text-white font-black">H</span>
+              <span className="relative block h-9 w-9 overflow-hidden rounded-xl bg-brand-red">
+                <Image src="/images/hpcs-logo.svg" alt="HPCS" fill sizes="36px" className="object-contain p-1" />
+              </span>
               <span className="font-display text-xl font-black text-white">HPCS</span>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-400">Hamza Parts &amp; Components Supply — votre spécialiste des pièces automobiles chinoises au Maroc.</p>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+              Le spécialiste des pièces automobiles chinoises au Maroc.
+            </p>
             <ul className="mt-5 space-y-2 text-sm text-neutral-400">
               <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> Casablanca, Maroc</li>
-              <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> +{WHATSAPP_NUMBER}</li>
+              <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> +212 6 50 54 29 99</li>
               <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> contact@hpcs.ma</li>
-              <li>
-                <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2 text-sm font-bold text-white hover:bg-[#1ebe57]">
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
-                </a>
-              </li>
             </ul>
+            <a
+              href={buildWhatsAppLink({})}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2 text-sm font-bold text-white hover:bg-[#1ebe57]"
+              aria-label={`WhatsApp +${WHATSAPP_NUMBER}`}
+            >
+              <MessageCircle className="h-4 w-4" /> WhatsApp
+            </a>
           </div>
 
           <div>
@@ -67,9 +75,12 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex-row">
-          <p>© {new Date().getFullYear()} HPCS — Hamza Parts &amp; Components Supply. Tous droits réservés.</p>
+          <p>© 2026 HPCS — Hamza Parts &amp; Components Supply</p>
           <div className="flex items-center gap-4">
-            <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer" className="hover:text-white" aria-label="WhatsApp">WhatsApp</a>
+            <span className="inline-flex items-center gap-1.5 text-neutral-500">
+              <Lock className="h-3.5 w-3.5" /> Site sécurisé
+            </span>
+            <a href={buildWhatsAppLink({})} target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
             <a href="#" className="hover:text-white" aria-label="Facebook">Facebook</a>
             <a href="#" className="hover:text-white" aria-label="Instagram">Instagram</a>
           </div>
