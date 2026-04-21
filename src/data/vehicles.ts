@@ -65,8 +65,10 @@ export const vehicles: BrandVehicles[] = [
   {
     brandSlug: "jac",
     models: [
-      { slug: "j7", name: "J7", yearStart: 2020, engines: ["1.5T"] },
+      { slug: "j7", name: "J7", yearStart: 2019, engines: ["1.5T"] },
+      { slug: "js3", name: "JS3", yearStart: 2020, engines: ["1.5L", "1.5T"] },
       { slug: "js4", name: "JS4", yearStart: 2019, engines: ["1.5L", "1.5T"] },
+      { slug: "js6", name: "JS6", yearStart: 2022, engines: ["1.5T"] },
       { slug: "t6", name: "T6", yearStart: 2015, engines: ["2.0T", "2.0T Diesel"] },
       { slug: "t8", name: "T8", yearStart: 2018, engines: ["2.0T Diesel"] },
       { slug: "refine", name: "Refine", yearStart: 2016, engines: ["2.0L"] },
@@ -76,7 +78,9 @@ export const vehicles: BrandVehicles[] = [
     brandSlug: "byd",
     models: [
       { slug: "song", name: "Song", yearStart: 2017, engines: ["1.5T", "Hybride"] },
+      { slug: "song-plus", name: "Song Plus", yearStart: 2020, engines: ["1.5T", "Hybride"] },
       { slug: "atto-3", name: "Atto 3 (Yuan Plus)", yearStart: 2022, engines: ["Électrique"] },
+      { slug: "seal-u", name: "Seal U", yearStart: 2023, engines: ["Électrique", "Hybride"] },
       { slug: "dolphin", name: "Dolphin", yearStart: 2021, engines: ["Électrique"] },
       { slug: "han", name: "Han", yearStart: 2020, engines: ["Électrique", "Hybride"] },
       { slug: "seal", name: "Seal", yearStart: 2022, engines: ["Électrique"] },
@@ -96,6 +100,8 @@ export const vehicles: BrandVehicles[] = [
     brandSlug: "dongfeng",
     models: [
       { slug: "ax7", name: "AX7", yearStart: 2015, engines: ["1.6T", "2.0T"] },
+      { slug: "mage", name: "Mage", yearStart: 2022, engines: ["1.5T", "2.0T"] },
+      { slug: "shine", name: "Shine", yearStart: 2023, engines: ["1.5T"] },
       { slug: "t5-evo", name: "T5 Evo", yearStart: 2021, engines: ["1.5T"] },
       { slug: "rich-6", name: "Rich 6", yearStart: 2018, engines: ["2.0T Diesel"] },
       { slug: "s30", name: "S30", yearStart: 2015, engines: ["1.6L"] },
@@ -113,6 +119,7 @@ export const vehicles: BrandVehicles[] = [
   {
     brandSlug: "faw",
     models: [
+      { slug: "bestune-t33", name: "Bestune T33", yearStart: 2019, engines: ["1.6L"] },
       { slug: "bestune-t77", name: "Bestune T77", yearStart: 2018, engines: ["1.2T", "1.5T"] },
       { slug: "bestune-t99", name: "Bestune T99", yearStart: 2019, engines: ["2.0T"] },
       { slug: "besturn-b30", name: "Besturn B30", yearStart: 2015, engines: ["1.6L"] },
