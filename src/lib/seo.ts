@@ -6,7 +6,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export function buildMetadata(opts: { title: string; description?: string; path?: string }): Metadata {
   const description =
     opts.description ??
-    "HPCS : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK et plus. Devis WhatsApp, livraison 24-72h.";
+    "CHINAPAL : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK et plus. Devis WhatsApp, livraison 24-72h.";
   const url = `${SITE}${opts.path ?? "/"}`;
   return {
     title: opts.title,
@@ -25,7 +25,7 @@ export function productJsonLd(p: Product) {
     image: [`${SITE}${p.image}`],
     description: p.description,
     sku: p.reference,
-    brand: { "@type": "Brand", name: "HPCS" },
+    brand: { "@type": "Brand", name: "CHINAPAL" },
   };
 }
 

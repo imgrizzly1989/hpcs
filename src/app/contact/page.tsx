@@ -39,7 +39,7 @@ export default function ContactPage() {
           </div>
           <div className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white p-4">
             <Mail className="h-5 w-5 text-brand-red" />
-            <div><p className="text-sm font-semibold">Email</p><p className="text-xs text-neutral-600">contact@hpcs.ma</p></div>
+            <div><p className="text-sm font-semibold">Email</p><p className="text-xs text-neutral-600">contact@chinapal.ma</p></div>
           </div>
           <div className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white p-4">
             <MapPin className="h-5 w-5 text-brand-red" />

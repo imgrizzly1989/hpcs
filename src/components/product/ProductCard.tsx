@@ -75,7 +75,7 @@ export function ProductCard({ product, photoUrl }: { product: Product; photoUrl?
                   {product.reference}
                 </span>
               </div>
-              <div className="absolute bottom-2 right-3 text-[10px] font-bold tracking-widest text-neutral-300">HPCS</div>
+              <div className="absolute bottom-2 right-3 text-[10px] font-bold tracking-widest text-neutral-300">CHINAPAL</div>
             </>
           ) : (
             <ProductVisual product={product} size="card" />

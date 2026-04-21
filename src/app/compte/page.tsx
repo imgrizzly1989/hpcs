@@ -28,7 +28,7 @@ export default function AccountPage() {
         <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-brand-red"><UserIcon className="h-6 w-6" /></span>
         <div>
           <h1 className="font-display text-2xl font-bold">Bonjour 👋</h1>
-          <p className="text-sm text-neutral-600">Bienvenue dans votre espace HPCS</p>
+          <p className="text-sm text-neutral-600">Bienvenue dans votre espace CHINAPAL</p>
         </div>
       </div>
 

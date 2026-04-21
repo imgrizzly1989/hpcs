@@ -57,11 +57,11 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           <p className="mt-4 max-w-3xl text-neutral-300 leading-relaxed">
             Pare-chocs, phares, rétroviseurs, calandres, ailes, capots, portes, essuie-glaces et vitrages —
             plus de {list.length} références pour Chery, MG, Geely, Haval, Changan et les autres marques chinoises.
-            Compatibilité vérifiée par VIN, garantie HPCS.
+            Compatibilité vérifiée par VIN, garantie CHINAPAL.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href={buildWhatsAppLink({ message: "Bonjour HPCS, je cherche une pièce de carrosserie." })}
+              href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je cherche une pièce de carrosserie." })}
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-bold hover:bg-[#1ebe57]"
             >
@@ -135,7 +135,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
             Envoyez-nous votre VIN et la pièce recherchée — notre équipe confirme la disponibilité et le prix sous 24h.
           </p>
           <a
-            href={buildWhatsAppLink({ message: "Bonjour HPCS, je cherche une pièce de carrosserie. VIN : [coller VIN]. Pièce recherchée : [décrire]." })}
+            href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je cherche une pièce de carrosserie. VIN : [coller VIN]. Pièce recherchée : [décrire]." })}
             target="_blank" rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-bold text-brand-red hover:bg-neutral-100"
           >

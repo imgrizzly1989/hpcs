@@ -46,7 +46,7 @@ export function CarrosserieShowcase() {
           Envoyez le VIN de votre véhicule sur WhatsApp — notre équipe confirme la disponibilité et vous envoie un devis sous 24h.
         </p>
         <a
-          href={buildWhatsAppLink({ message: "Bonjour HPCS, je cherche une pièce de carrosserie." })}
+          href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je cherche une pièce de carrosserie." })}
           target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-bold text-white hover:bg-[#1ebe57]"
         >

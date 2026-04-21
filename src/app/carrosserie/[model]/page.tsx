@@ -113,7 +113,7 @@ export default function CarrosserieModelPage({ params }: { params: { model: stri
           Envoyez-nous le VIN et la description, nous vous revenons sous 24h avec un devis.
         </p>
         <a
-          href={buildWhatsAppLink({ message: `Bonjour HPCS, je cherche une pièce de carrosserie pour ${m.name}. VIN : [coller VIN]. Pièce : [décrire].` })}
+          href={buildWhatsAppLink({ message: `Bonjour CHINAPAL, je cherche une pièce de carrosserie pour ${m.name}. VIN : [coller VIN]. Pièce : [décrire].` })}
           target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-bold text-brand-red hover:bg-neutral-100"
         >

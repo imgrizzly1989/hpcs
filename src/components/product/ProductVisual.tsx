@@ -97,9 +97,9 @@ export function ProductVisual({
             </div>
           )}
 
-          {/* HPCS watermark bottom-right */}
+          {/* CHINAPAL watermark bottom-right */}
           <div className="absolute bottom-2 right-3 text-[10px] font-bold tracking-widest text-neutral-300">
-            HPCS
+            CHINAPAL
           </div>
 
           {/* Gallery variant label top-left */}

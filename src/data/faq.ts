@@ -1,7 +1,7 @@
 import type { FaqEntry } from "@/types";
 
 export const faq: FaqEntry[] = [
-  { q: "Quelles marques couvrez-vous ?", a: "HPCS est spécialiste des pièces pour voitures chinoises vendues au Maroc : Chery, Geely, MG, Haval, BYD, DFSK, Great Wall, JAC, BAIC, Dongfeng, Jetour et FAW." },
+  { q: "Quelles marques couvrez-vous ?", a: "CHINAPAL est spécialiste des pièces pour voitures chinoises vendues au Maroc : Chery, Geely, MG, Haval, BYD, DFSK, Great Wall, JAC, BAIC, Dongfeng, Jetour et FAW." },
   { q: "Les pièces sont-elles d'origine ?", a: "Nous proposons des pièces d'origine constructeur (OEM) et des équivalents de qualité équivalente (OES) selon disponibilité, toutes garanties compatibles." },
   { q: "Comment vérifier la compatibilité avec ma voiture ?", a: "Utilisez notre sélecteur de véhicule (marque, modèle, année, moteur) ou contactez-nous sur WhatsApp avec votre carte grise." },
   { q: "Quels sont les délais de livraison ?", a: "Livraison partout au Maroc en 24 à 72h selon la ville. Casablanca, Rabat, Marrakech généralement J+1." },
@@ -11,5 +11,5 @@ export const faq: FaqEntry[] = [
   { q: "Puis-je commander par WhatsApp ?", a: "Absolument. Cliquez sur le bouton WhatsApp présent sur chaque page ou fiche produit, notre équipe répond 7j/7." },
   { q: "Livrez-vous dans tout le Maroc ?", a: "Oui, nous livrons dans plus de 60 villes marocaines via nos partenaires logistiques." },
   { q: "Comment obtenir un devis pour plusieurs pièces ?", a: "Ajoutez les pièces au panier et contactez-nous, ou envoyez directement votre liste sur WhatsApp avec votre modèle de véhicule." },
-  { q: "Proposez-vous la pose des pièces ?", a: "HPCS est un fournisseur de pièces. Nous pouvons cependant recommander des garages partenaires dans votre ville." },
+  { q: "Proposez-vous la pose des pièces ?", a: "CHINAPAL est un fournisseur de pièces. Nous pouvons cependant recommander des garages partenaires dans votre ville." },
 ];

@@ -11,11 +11,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 md:px-6 py-16">
         <div className="grid gap-10 md:grid-cols-5">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="relative block h-9 w-9 overflow-hidden rounded-xl bg-brand-red">
-                <Image src="/images/hpcs-logo.svg" alt="HPCS" fill sizes="36px" className="object-contain p-1" />
+            <div className="flex items-center gap-3">
+              <span className="relative block h-11 w-20 overflow-hidden rounded-lg">
+                <Image src="/images/chinapal-logo.jpg" alt="CHINAPAL" fill sizes="80px" className="object-cover" />
               </span>
-              <span className="font-display text-xl font-black text-white">HPCS</span>
+              <span className="font-display text-xl font-black text-white">CHINAPAL</span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-neutral-400">
               Le spécialiste des pièces automobiles chinoises au Maroc.
@@ -23,7 +23,7 @@ export function Footer() {
             <ul className="mt-5 space-y-2 text-sm text-neutral-400">
               <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> Casablanca, Maroc</li>
               <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> +212 6 50 54 29 99</li>
-              <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> contact@hpcs.ma</li>
+              <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> contact@chinapal.ma</li>
             </ul>
             <a
               href={buildWhatsAppLink({})}
@@ -88,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 md:flex-row">
-          <p>© 2026 HPCS — Hamza Parts &amp; Components Supply</p>
+          <p>© 2026 CHINAPAL — Chinapal Auto Parts</p>
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5 text-neutral-500">
               <Lock className="h-3.5 w-3.5" /> Site sécurisé

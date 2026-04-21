@@ -1,6 +1,6 @@
-# HPCS — Hamza Parts & Components Supply
+# CHINAPAL — Chinapal Auto Parts
 
-Frontend ecommerce **Next.js 14 (App Router) + TypeScript + Tailwind CSS** pour HPCS, spécialiste marocain des **pièces détachées pour voitures chinoises** (Chery, Geely, MG, Haval, BYD, DFSK, Great Wall, JAC, BAIC, Dongfeng, Jetour, FAW).
+Frontend ecommerce **Next.js 14 (App Router) + TypeScript + Tailwind CSS** pour CHINAPAL, spécialiste marocain des **pièces détachées pour voitures chinoises** (Chery, Geely, MG, Haval, BYD, DFSK, Great Wall, JAC, BAIC, Dongfeng, Jetour, FAW).
 
 Taglines : *Vos pièces pour voitures chinoises au Maroc — Pièces fiables pour marques chinoises — Votre spécialiste des pièces automobiles chinoises.*
 
@@ -48,7 +48,7 @@ src/
   components/
     layout/  (Header, Footer, MobileBottomNav, WhatsAppFAB)
     home/    (Hero, VehicleSelector, BrandsGrid, CategoriesGrid,
-              FeaturedProducts, WhyHPCS, FAQSection, Newsletter)
+              FeaturedProducts, WhyCHINAPAL, FAQSection, Newsletter)
     product/ (ProductCard, ProductGallery, ProductSpecs,
               RelatedProducts, AddToCartButton, WhatsAppOrderButton)
     shop/    (ShopClient, ProductGrid)
@@ -75,15 +75,15 @@ public/
 - **Checkout** : formulaire complet, modes de paiement (COD actif, Carte désactivé, WhatsApp qui ouvre wa.me avec récap pré-rempli), toast de confirmation + redirection.
 - **Auth mock** : `/connexion` + `/inscription` → toast + redirect `/compte`.
 - **WhatsApp FAB** flottant (z-50) + boutons sur chaque produit ; messages pré-remplis en français avec référence.
-- **Bottom nav mobile** 4 entrées (Accueil, Favoris, Panier, Compte), état actif rouge HPCS, cachée en md+.
+- **Bottom nav mobile** 4 entrées (Accueil, Favoris, Panier, Compte), état actif rouge CHINAPAL, cachée en md+.
 - **FAQ** avec accordéon + JSON-LD FAQPage.
 - **SEO** : metadata par page, sitemap.ts (statique + produits + marques + catégories), robots.ts, JSON-LD Product / FAQPage / BreadcrumbList.
 - **Accessible** : focus-visible ring rouge, aria-labels sur boutons-icône, alt sur images.
 
 ## Données de démo — à remplacer avant production
 
-- **Images produits** : SVG placeholders brandés HPCS par catégorie (`/public/images/placeholders/*.svg`). Remplacer par de vraies photos produit.
-- **Références OEM** : toutes au format `HPCS-XXXXX-NN` — **placeholders**, à remplacer par les vraies références constructeur.
+- **Images produits** : SVG placeholders brandés CHINAPAL par catégorie (`/public/images/placeholders/*.svg`). Remplacer par de vraies photos produit.
+- **Références OEM** : toutes au format `CHINAPAL-XXXXX-NN` — **placeholders**, à remplacer par les vraies références constructeur.
 - **Wordmarks marques** : SVG générés (texte stylisé), **pas les vrais logos**. Les logos officiels Chery, Geely, MG, etc. sont protégés — à obtenir sous licence/droit avant mise en production.
 - **Prix / stocks** : valeurs démo réalistes mais non commerciales.
 
@@ -114,7 +114,7 @@ npm run build  # build prod, doit passer sans erreur
 
 ---
 
-© HPCS — Hamza Parts & Components Supply. Construit au Maroc 🇲🇦
+© CHINAPAL — Chinapal Auto Parts. Construit au Maroc 🇲🇦
 
 ---
 

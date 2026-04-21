@@ -8,7 +8,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 export const metadata = buildMetadata({
   title: "À propos",
   description:
-    "HPCS — spécialiste des pièces automobiles chinoises au Maroc. Notre histoire, notre mission, nos engagements pour les propriétaires de Chery, Geely, MG, Haval, BYD et plus.",
+    "CHINAPAL — spécialiste des pièces automobiles chinoises au Maroc. Notre histoire, notre mission, nos engagements pour les propriétaires de Chery, Geely, MG, Haval, BYD et plus.",
   path: "/a-propos",
 });
 
@@ -27,10 +27,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20">
           <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À propos" }]} />
           <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-red" /> À propos d&apos;HPCS
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-red" /> À propos d&apos;CHINAPAL
           </span>
           <h1 className="mt-4 font-display text-3xl md:text-5xl font-bold tracking-tight text-brand-charcoal">
-            À propos d&apos;HPCS
+            À propos d&apos;CHINAPAL
           </h1>
           <p className="mt-3 max-w-3xl text-base md:text-lg text-neutral-600 leading-relaxed">
             Spécialiste des pièces automobiles chinoises au Maroc.
@@ -44,13 +44,13 @@ export default function AboutPage() {
           <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-charcoal">Notre histoire</h2>
           <div className="mt-4 space-y-4 text-neutral-700 leading-relaxed">
             <p>
-              HPCS — Hamza Parts &amp; Components Supply — a été fondé à Casablanca par Hamza, après plusieurs années passées à importer des pièces OEM pour véhicules japonais. En discutant chaque jour avec des mécaniciens et des automobilistes, il a constaté un problème récurrent : les propriétaires de voitures chinoises au Maroc étaient mal servis.
+              CHINAPAL — Chinapal Auto Parts — a été fondé à Casablanca par Hamza, après plusieurs années passées à importer des pièces OEM pour véhicules japonais. En discutant chaque jour avec des mécaniciens et des automobilistes, il a constaté un problème récurrent : les propriétaires de voitures chinoises au Maroc étaient mal servis.
             </p>
             <p>
               Les pièces étaient difficiles à trouver, les délais d&apos;importation longs, et de nombreux garages utilisaient des substituts génériques faute d&apos;alternative. Face à cette frustration partagée, Hamza a pris la décision de se spécialiser à 100% dans les pièces pour voitures chinoises — devenant l&apos;un des premiers importateurs dédiés au Maroc.
             </p>
             <p>
-              Depuis, HPCS s&apos;est imposé comme l&apos;interlocuteur de référence pour les propriétaires de Chery, Geely, MG, Haval, BYD, Changan, JAC et plus de 12 marques chinoises présentes dans le Royaume.
+              Depuis, CHINAPAL s&apos;est imposé comme l&apos;interlocuteur de référence pour les propriétaires de Chery, Geely, MG, Haval, BYD, Changan, JAC et plus de 12 marques chinoises présentes dans le Royaume.
             </p>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function AboutPage() {
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-charcoal">Pourquoi les voitures chinoises ?</h2>
           <p className="mt-4 text-neutral-700 leading-relaxed">
-            Les marques chinoises — MG, Chery, Haval, Geely, BYD, Changan, JAC — connaissent une croissance spectaculaire au Maroc depuis plusieurs années. Elles offrent un rapport qualité-prix remarquable, des équipements modernes et des performances solides. Mais ce boom s&apos;accompagne d&apos;un besoin critique : un service après-vente spécialisé, capable de fournir rapidement les pièces compatibles. C&apos;est exactement la mission d&apos;HPCS.
+            Les marques chinoises — MG, Chery, Haval, Geely, BYD, Changan, JAC — connaissent une croissance spectaculaire au Maroc depuis plusieurs années. Elles offrent un rapport qualité-prix remarquable, des équipements modernes et des performances solides. Mais ce boom s&apos;accompagne d&apos;un besoin critique : un service après-vente spécialisé, capable de fournir rapidement les pièces compatibles. C&apos;est exactement la mission d&apos;CHINAPAL.
           </p>
         </section>
 

@@ -7,7 +7,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata = buildMetadata({
   title: "Boutique",
-  description: "Boutique HPCS : catalogue complet de pièces pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD. Devis WhatsApp, livraison 24-72h.",
+  description: "Boutique CHINAPAL : catalogue complet de pièces pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD. Devis WhatsApp, livraison 24-72h.",
   path: "/boutique",
 });
 
@@ -31,13 +31,13 @@ export default function BoutiquePage() {
           Envoyez-nous le numéro de châssis (VIN) de votre véhicule et la pièce recherchée — nous la trouvons pour vous.
         </p>
         <a
-          href={buildWhatsAppLink({ message: "Bonjour HPCS, je cherche une pièce spécifique. VIN de mon véhicule : [coller VIN]. Pièce recherchée : [décrire]." })}
+          href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je cherche une pièce spécifique. VIN de mon véhicule : [coller VIN]. Pièce recherchée : [décrire]." })}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-bold text-white hover:bg-[#1ebe57]"
         >
           <MessageCircle className="h-5 w-5" />
-          Contacter HPCS sur WhatsApp
+          Contacter CHINAPAL sur WhatsApp
         </a>
         <p className="mt-4 text-xs text-neutral-400">
           Ou consultez <Link href="/faq" className="underline hover:text-white">notre FAQ</Link> pour les questions fréquentes.

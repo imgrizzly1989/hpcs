@@ -52,7 +52,7 @@ export function ProductGallery({ product }: { product: Product }) {
             {labels[idx]}
           </span>
         </div>
-        <div className="absolute bottom-3 right-3 text-xs font-bold tracking-widest text-neutral-300">HPCS</div>
+        <div className="absolute bottom-3 right-3 text-xs font-bold tracking-widest text-neutral-300">CHINAPAL</div>
       </div>
     );
   };

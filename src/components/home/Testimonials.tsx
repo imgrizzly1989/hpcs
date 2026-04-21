@@ -7,31 +7,31 @@ const ITEMS: T[] = [
     name: "Karim B.",
     city: "Casablanca",
     role: "Propriétaire MG ZS 2020",
-    text: "J'ai cherché des plaquettes de frein pour ma MG ZS pendant 2 semaines à Derb Omar avant de tomber sur HPCS. Pièce originale, livrée en 48h. Service nickel.",
+    text: "J'ai cherché des plaquettes de frein pour ma MG ZS pendant 2 semaines à Derb Omar avant de tomber sur CHINAPAL. Pièce originale, livrée en 48h. Service nickel.",
   },
   {
     name: "Youssef T.",
     city: "Rabat",
     role: "Garagiste indépendant",
-    text: "En tant que mécanicien j'ai souvent besoin de pièces pour Chery et Haval. HPCS répond vite sur WhatsApp, m'envoie les références, et livre rapidement. Devenu mon fournisseur principal.",
+    text: "En tant que mécanicien j'ai souvent besoin de pièces pour Chery et Haval. CHINAPAL répond vite sur WhatsApp, m'envoie les références, et livre rapidement. Devenu mon fournisseur principal.",
   },
   {
     name: "Salma A.",
     city: "Marrakech",
     role: "Propriétaire Geely Coolray 2021",
-    text: "J'avais peur de ne pas trouver de filtre habitacle pour ma Coolray. HPCS l'a confirmé compatible avec mon VIN et livré à Marrakech en 3 jours. Très professionnel.",
+    text: "J'avais peur de ne pas trouver de filtre habitacle pour ma Coolray. CHINAPAL l'a confirmé compatible avec mon VIN et livré à Marrakech en 3 jours. Très professionnel.",
   },
   {
     name: "Mehdi K.",
     city: "Tanger",
     role: "Propriétaire Haval Jolion 2022",
-    text: "Phare avant cassé après un accident. HPCS m'a trouvé l'original pour ma Jolion et livré à Tanger. Prix correct, service rapide.",
+    text: "Phare avant cassé après un accident. CHINAPAL m'a trouvé l'original pour ma Jolion et livré à Tanger. Prix correct, service rapide.",
   },
   {
     name: "Rachid M.",
     city: "Agadir",
     role: "Atelier auto",
-    text: "Service pro, tarifs préférentiels pour les garages. HPCS connaît vraiment les voitures chinoises — c'est rare au Maroc.",
+    text: "Service pro, tarifs préférentiels pour les garages. CHINAPAL connaît vraiment les voitures chinoises — c'est rare au Maroc.",
   },
 ];
 

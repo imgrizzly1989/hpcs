@@ -12,10 +12,10 @@ const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", 
 
 export const metadata: Metadata = {
   title: {
-    default: "HPCS — Pièces d'origine pour voitures chinoises au Maroc | Chery Geely Haval MG BYD",
-    template: "%s | HPCS",
+    default: "CHINAPAL — Pièces d'origine pour voitures chinoises au Maroc | Chery Geely Haval MG BYD",
+    template: "%s | CHINAPAL",
   },
-  description: "HPCS : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW. Devis WhatsApp en 24h, livraison partout au Maroc.",
+  description: "CHINAPAL : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW. Devis WhatsApp en 24h, livraison partout au Maroc.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   icons: { icon: "/favicon.svg" },
 };

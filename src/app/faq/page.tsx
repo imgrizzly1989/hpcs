@@ -13,7 +13,7 @@ export default function FAQPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "FAQ" }]} />
       <h1 className="mt-4 font-display text-3xl font-bold">Questions fréquentes</h1>
-      <p className="mt-1 text-sm text-neutral-600">Tout ce qu&apos;il faut savoir sur HPCS, livraison, garanties et compatibilité.</p>
+      <p className="mt-1 text-sm text-neutral-600">Tout ce qu&apos;il faut savoir sur CHINAPAL, livraison, garanties et compatibilité.</p>
       <div className="mt-6 divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
         {faq.map((f, i) => {
           const isOpen = open === i;

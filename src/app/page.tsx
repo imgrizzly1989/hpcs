@@ -6,7 +6,7 @@ import { CategoriesGrid } from "@/components/home/CategoriesGrid";
 import { CarrosserieShowcase } from "@/components/home/CarrosserieShowcase";
 import { TopParts } from "@/components/home/TopParts";
 import { HowToOrder } from "@/components/home/HowToOrder";
-import { WhyHPCS } from "@/components/home/WhyHPCS";
+import { WhyCHINAPAL } from "@/components/home/WhyCHINAPAL";
 import { Testimonials } from "@/components/home/Testimonials";
 import { TrustStats } from "@/components/home/TrustStats";
 import { Newsletter } from "@/components/home/Newsletter";
@@ -25,7 +25,7 @@ export default function HomePage() {
       <CarrosserieShowcase />
       <TopParts />
       <HowToOrder />
-      <WhyHPCS />
+      <WhyCHINAPAL />
       <Testimonials />
       <TrustStats />
       <FAQSection />

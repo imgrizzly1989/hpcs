@@ -13,7 +13,7 @@ export function TrustStats() {
             Une entreprise basée à Casablanca, au service de <span className="text-brand-red">tout le Maroc</span>
           </h2>
           <p className="mt-4 max-w-2xl text-neutral-300 leading-relaxed">
-            De Tanger à Dakhla, d&apos;Oujda à Agadir — HPCS approvisionne particuliers, garages et revendeurs avec des pièces vérifiées et une expertise dédiée aux voitures chinoises.
+            De Tanger à Dakhla, d&apos;Oujda à Agadir — CHINAPAL approvisionne particuliers, garages et revendeurs avec des pièces vérifiées et une expertise dédiée aux voitures chinoises.
           </p>
         </div>
         <div className="mt-10 grid gap-8 sm:grid-cols-3">

@@ -133,7 +133,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
               <CheckCircle2 className="h-4 w-4 text-brand-red shrink-0" />
-              {product.category === "carrosserie" ? "Retour garanti si non compatible" : "Vérifié par HPCS"}
+              {product.category === "carrosserie" ? "Retour garanti si non compatible" : "Vérifié par CHINAPAL"}
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-3 text-xs font-medium text-neutral-700">
               <Truck className="h-4 w-4 text-brand-red shrink-0" />

@@ -60,11 +60,11 @@ export function Header() {
 
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/hpcs-logo.svg"
-            alt="HPCS"
-            width={120}
-            height={30}
-            className="h-7 w-auto md:h-8"
+            src="/images/chinapal-logo.jpg"
+            alt="CHINAPAL"
+            width={1600}
+            height={896}
+            className="h-8 w-auto md:h-10 rounded"
             priority
           />
           <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-neutral-500">

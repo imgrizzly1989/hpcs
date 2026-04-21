@@ -64,11 +64,11 @@ export default function CarrosserieSubPage({ params }: { params: { sub: string }
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-8 text-center">
             <p className="text-neutral-600">Aucune pièce trouvée pour cette sous-catégorie. Contactez-nous pour une demande personnalisée.</p>
             <a
-              href={buildWhatsAppLink({ message: `Bonjour HPCS, je cherche une pièce de type ${sub.name}.` })}
+              href={buildWhatsAppLink({ message: `Bonjour CHINAPAL, je cherche une pièce de type ${sub.name}.` })}
               target="_blank" rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-bold text-white hover:bg-[#1ebe57]"
             >
-              <MessageCircle className="h-5 w-5" /> Contacter HPCS
+              <MessageCircle className="h-5 w-5" /> Contacter CHINAPAL
             </a>
           </div>
         )}
@@ -80,7 +80,7 @@ export default function CarrosserieSubPage({ params }: { params: { sub: string }
           Envoyez votre VIN et la pièce recherchée, nous confirmons la compatibilité et le prix.
         </p>
         <a
-          href={buildWhatsAppLink({ message: `Bonjour HPCS, je cherche ${sub.name.toLowerCase()} pour ma voiture. VIN : [coller VIN].` })}
+          href={buildWhatsAppLink({ message: `Bonjour CHINAPAL, je cherche ${sub.name.toLowerCase()} pour ma voiture. VIN : [coller VIN].` })}
           target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 font-bold text-white hover:bg-[#1ebe57]"
         >

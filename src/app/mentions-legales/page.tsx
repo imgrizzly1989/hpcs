@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Mentions légales",
-  description: "Mentions légales de HPCS — Hamza Parts & Components Supply, spécialiste des pièces pour voitures chinoises au Maroc.",
+  description: "Mentions légales de CHINAPAL — Chinapal Auto Parts, spécialiste des pièces pour voitures chinoises au Maroc.",
   path: "/mentions-legales",
 });
 
@@ -15,8 +15,8 @@ export default function MentionsLegalesPage() {
       <div className="prose prose-neutral mt-6 max-w-none text-sm leading-relaxed text-neutral-700 space-y-5">
         <section>
           <h2 className="font-display text-xl font-bold text-brand-charcoal">Éditeur du site</h2>
-          <p>Le site HPCS est édité par <strong>Hamza Parts &amp; Components Supply (HPCS)</strong>, entreprise spécialisée dans la vente de pièces détachées pour voitures chinoises au Maroc.</p>
-          <p>Siège social : Casablanca, Maroc.<br />Contact : contact@hpcs.ma</p>
+          <p>Le site CHINAPAL est édité par <strong>Chinapal Auto Parts (CHINAPAL)</strong>, entreprise spécialisée dans la vente de pièces détachées pour voitures chinoises au Maroc.</p>
+          <p>Siège social : Casablanca, Maroc.<br />Contact : contact@chinapal.ma</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-brand-charcoal">Hébergement</h2>
@@ -24,11 +24,11 @@ export default function MentionsLegalesPage() {
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-brand-charcoal">Propriété intellectuelle</h2>
-          <p>L&apos;ensemble du contenu du site (textes, images, identité visuelle) est la propriété exclusive de HPCS, sauf mention contraire. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
+          <p>L&apos;ensemble du contenu du site (textes, images, identité visuelle) est la propriété exclusive de CHINAPAL, sauf mention contraire. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-brand-charcoal">Marques citées</h2>
-          <p>Les marques automobiles citées (Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW) sont la propriété de leurs détenteurs respectifs. HPCS est un distributeur indépendant non affilié aux constructeurs.</p>
+          <p>Les marques automobiles citées (Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW) sont la propriété de leurs détenteurs respectifs. CHINAPAL est un distributeur indépendant non affilié aux constructeurs.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-brand-charcoal">Responsabilité</h2>

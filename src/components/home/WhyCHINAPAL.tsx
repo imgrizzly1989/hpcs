@@ -33,11 +33,11 @@ const items = [
   },
 ];
 
-export function WhyHPCS() {
+export function WhyCHINAPAL() {
   return (
     <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
       <div className="mb-10">
-        <p className="text-xs font-bold uppercase tracking-widest text-brand-red">POURQUOI HPCS</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-brand-red">POURQUOI CHINAPAL</p>
         <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold tracking-tight text-brand-charcoal">
           Le bon interlocuteur pour les pièces chinoises
         </h2>

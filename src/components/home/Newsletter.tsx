@@ -9,7 +9,7 @@ export function Newsletter() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.includes("@")) return toast.error("Email invalide");
-    toast.success("Merci, vous êtes inscrit à la newsletter HPCS");
+    toast.success("Merci, vous êtes inscrit à la newsletter CHINAPAL");
     setEmail("");
   };
   return (

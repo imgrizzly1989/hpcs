@@ -6,7 +6,7 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export function ProductGrid({ products }: { products: Product[] }) {
   if (products.length === 0) {
-    const msg = "Bonjour HPCS, je cherche une pièce que je n'ai pas trouvée sur votre site. Pièce recherchée : [décrivez] — pour [véhicule / modèle / année].";
+    const msg = "Bonjour CHINAPAL, je cherche une pièce que je n'ai pas trouvée sur votre site. Pièce recherchée : [décrivez] — pour [véhicule / modèle / année].";
     return (
       <div className="rounded-3xl border border-dashed border-neutral-300 bg-neutral-50 p-10 text-center">
         <PackageX className="mx-auto h-12 w-12 text-neutral-400" />
