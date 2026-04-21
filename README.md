@@ -115,3 +115,7 @@ npm run build  # build prod, doit passer sans erreur
 ---
 
 © HPCS — Hamza Parts & Components Supply. Construit au Maroc 🇲🇦
+
+---
+
+Product images sourced from MotorTec (www.motortec.com.cn) supplier catalog with authorization. Re-use outside this project prohibited without their permission.
