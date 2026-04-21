@@ -18,6 +18,7 @@ export function Header() {
   const favCount = useFavorites((s) => s.ids.length);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<null | "cat" | "brand">(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -25,6 +26,13 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!openMenu) return;
+    const close = () => setOpenMenu(null);
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
+  }, [openMenu]);
 
   return (
     <header
@@ -101,21 +109,39 @@ export function Header() {
           <Link href="/" className="hover:text-brand-red whitespace-nowrap">{fr.nav.home}</Link>
           <Link href="/boutique" className="hover:text-brand-red whitespace-nowrap">{fr.nav.shop}</Link>
           <Link href="/vehicule" className="inline-flex items-center gap-1 hover:text-brand-red whitespace-nowrap">Choisir ma voiture</Link>
-          <div className="group relative">
-            <button className="hover:text-brand-red whitespace-nowrap">{fr.nav.categories}</button>
-            <div className="invisible absolute left-0 top-full z-30 mt-2 grid w-[420px] grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-white p-3 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setOpenMenu(openMenu === "cat" ? null : "cat")}
+              className="hover:text-brand-red whitespace-nowrap"
+              aria-expanded={openMenu === "cat"}
+            >
+              {fr.nav.categories}
+            </button>
+            <div className={cn(
+              "absolute left-0 top-full z-30 mt-2 grid w-[420px] grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-white p-3 shadow-lg transition",
+              openMenu === "cat" ? "visible opacity-100" : "invisible opacity-0"
+            )}>
               {categories.map((c) => (
-                <Link key={c.slug} href={`/categorie/${c.slug}`} className="rounded-lg px-3 py-2 text-sm hover:bg-neutral-50 hover:text-brand-red">
+                <Link key={c.slug} href={`/categorie/${c.slug}`} onClick={() => setOpenMenu(null)} className="rounded-lg px-3 py-2 text-sm hover:bg-neutral-50 hover:text-brand-red">
                   {c.name}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="group relative">
-            <button className="hover:text-brand-red whitespace-nowrap">{fr.nav.brands}</button>
-            <div className="invisible absolute left-0 top-full z-30 mt-2 grid w-[420px] grid-cols-3 gap-1 rounded-2xl border border-neutral-200 bg-white p-3 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setOpenMenu(openMenu === "brand" ? null : "brand")}
+              className="hover:text-brand-red whitespace-nowrap"
+              aria-expanded={openMenu === "brand"}
+            >
+              {fr.nav.brands}
+            </button>
+            <div className={cn(
+              "absolute left-0 top-full z-30 mt-2 grid w-[420px] grid-cols-3 gap-1 rounded-2xl border border-neutral-200 bg-white p-3 shadow-lg transition",
+              openMenu === "brand" ? "visible opacity-100" : "invisible opacity-0"
+            )}>
               {brands.map((b) => (
-                <Link key={b.slug} href={`/marque/${b.slug}`} className="rounded-lg px-3 py-2 text-sm hover:bg-neutral-50 hover:text-brand-red">
+                <Link key={b.slug} href={`/marque/${b.slug}`} onClick={() => setOpenMenu(null)} className="rounded-lg px-3 py-2 text-sm hover:bg-neutral-50 hover:text-brand-red">
                   {b.name}
                 </Link>
               ))}
