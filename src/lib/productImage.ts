@@ -81,7 +81,12 @@ const MATCHERS: Array<[RegExp, string]> = [
   [/tapis/i, "floor-mat"],
 ];
 
-export function getProductImage(name: string, _category?: string): string | null {
+export function getProductImage(name: string, category?: string): string | null {
+  // User request: one shared image for ALL carrosserie parts.
+  if (category === "carrosserie") {
+    return "/images/products/carrosserie.jpg";
+  }
+
   for (const [re, key] of MATCHERS) {
     if (re.test(name)) {
       if (AVAILABLE.has(key)) return `/images/products/${key}.jpg`;
