@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { WhatsAppFAB } from "@/components/layout/WhatsAppFAB";
 import { ToastProvider } from "@/components/ui/ToastProvider";
+import { localBusinessJsonLd } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MobileBottomNav />
         <WhatsAppFAB />
         <ToastProvider />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }} />
       </body>
     </html>
   );

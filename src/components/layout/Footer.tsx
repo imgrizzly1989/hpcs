@@ -41,6 +41,9 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link href="/boutique" className="hover:text-brand-red">Boutique</Link></li>
               <li><Link href="/vehicule" className="hover:text-brand-red">Choisir ma voiture</Link></li>
+              <li><Link href="/pieces/pare-choc-maroc" className="hover:text-brand-red">Pare-chocs Maroc</Link></li>
+              <li><Link href="/pieces/phares-maroc" className="hover:text-brand-red">Phares Maroc</Link></li>
+              <li><Link href="/pieces/filtres-maroc" className="hover:text-brand-red">Filtres Maroc</Link></li>
               <li><Link href="/faq" className="hover:text-brand-red">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-brand-red">Contact</Link></li>
               <li><Link href="/a-propos" className="hover:text-brand-red">À propos</Link></li>
@@ -54,7 +57,7 @@ export function Footer() {
                 <li key={b.slug}>
                   <Link href={`/marque/${b.slug}`} className="inline-flex items-center gap-2 hover:text-brand-red">
                     <span className="flex h-5 w-8 shrink-0 items-center justify-center rounded bg-white/5 p-0.5">
-                      <Image src={b.logo} alt="" width={32} height={16} className="max-h-4 w-auto object-contain" />
+                      <Image src={b.logo} alt={`${b.name} logo`} width={32} height={16} className="max-h-4 w-auto object-contain" />
                     </span>
                     {b.name}
                   </Link>

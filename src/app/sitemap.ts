@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
+import { seoCategories } from "@/data/seoCategories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -15,5 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...products.map((p) => ({ url: `${base}/produit/${p.slug}`, lastModified: now })),
     ...brands.map((b) => ({ url: `${base}/marque/${b.slug}`, lastModified: now })),
     ...categories.map((c) => ({ url: `${base}/categorie/${c.slug}`, lastModified: now })),
+    ...seoCategories.map((s) => ({ url: `${base}/pieces/${s.slug}`, lastModified: now })),
   ];
 }

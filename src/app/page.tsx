@@ -4,6 +4,7 @@ import { BrandsGrid } from "@/components/home/BrandsGrid";
 import { TopVehicles } from "@/components/home/TopVehicles";
 import { CategoriesGrid } from "@/components/home/CategoriesGrid";
 import { CarrosserieShowcase } from "@/components/home/CarrosserieShowcase";
+import { SeoLinks } from "@/components/home/SeoLinks";
 import { TopParts } from "@/components/home/TopParts";
 import { HowToOrder } from "@/components/home/HowToOrder";
 import { WhyCHINAPAL } from "@/components/home/WhyCHINAPAL";
@@ -23,6 +24,7 @@ export default function HomePage() {
       <TopVehicles />
       <CategoriesGrid />
       <CarrosserieShowcase />
+      <SeoLinks />
       <TopParts />
       <HowToOrder />
       <WhyCHINAPAL />

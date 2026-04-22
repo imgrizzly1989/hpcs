@@ -53,3 +53,22 @@ export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
     })),
   };
 }
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AutoPartsStore",
+    name: "CHINAPAL",
+    url: SITE,
+    telephone: "+212650542999",
+    areaServed: "MA",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Casablanca",
+      addressCountry: "MA",
+    },
+    description:
+      "Spécialiste des pièces automobiles pour voitures chinoises au Maroc : carrosserie, freinage, suspension, filtration et pièces moteur.",
+    sameAs: ["https://wa.me/212650542999"],
+  };
+}
