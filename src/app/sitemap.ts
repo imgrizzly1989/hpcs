@@ -3,6 +3,8 @@ import { products } from "@/data/products";
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import { seoCategories } from "@/data/seoCategories";
+import { seoModels } from "@/data/seoModels";
+import { seoPartModels } from "@/data/seoPartModels";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -17,5 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brands.map((b) => ({ url: `${base}/marque/${b.slug}`, lastModified: now })),
     ...categories.map((c) => ({ url: `${base}/categorie/${c.slug}`, lastModified: now })),
     ...seoCategories.map((s) => ({ url: `${base}/pieces/${s.slug}`, lastModified: now })),
+    ...seoModels.map((s) => ({ url: `${base}/modeles/${s.slug}`, lastModified: now })),
+    ...seoPartModels.map((s) => ({ url: `${base}/recherche/${s.slug}`, lastModified: now })),
   ];
 }

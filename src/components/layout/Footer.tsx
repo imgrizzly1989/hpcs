@@ -24,6 +24,7 @@ export function Footer() {
               <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> Casablanca, Maroc</li>
               <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> +212 6 50 54 29 99</li>
               <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-brand-red shrink-0" /> contact@chinapal.ma</li>
+              <li className="flex items-start gap-2"><span className="mt-0.5 text-brand-red shrink-0">◷</span> Lun-Sam : 09:00-18:30</li>
             </ul>
             <a
               href={buildWhatsAppLink({})}

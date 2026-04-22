@@ -12,6 +12,7 @@ import { products, getProduct } from "@/data/products";
 import { getCategory } from "@/data/categories";
 import { getBrand } from "@/data/brands";
 import { getVehiclesForBrand } from "@/data/vehicles";
+import { getSeoModelByVehicle } from "@/data/seoModels";
 import { buildMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -34,6 +35,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProduct(params.slug);
   if (!product) notFound();
   const category = getCategory(product.category);
+  const firstVehicle = product.compatibleVehicles[0];
+  const seoModel = firstVehicle ? getSeoModelByVehicle(firstVehicle.brandSlug, firstVehicle.modelSlug) : undefined;
 
   const productLd = productJsonLd(product);
   const crumbLd = breadcrumbJsonLd([
@@ -170,6 +173,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </tbody>
               </table>
             </div>
+            {seoModel && (
+              <p className="mt-4 text-sm leading-relaxed text-neutral-700">
+                Besoin d&apos;aide pour confirmer la version ? Consultez aussi le guide dédié <Link href={`/modeles/${seoModel.slug}`} className="font-semibold text-brand-red hover:underline">{seoModel.h1.toLowerCase()}</Link> pour retrouver les pièces les plus recherchées et contacter CHINAPAL plus rapidement.
+              </p>
+            )}
           </div>
 
           <p className="mt-6 text-sm leading-relaxed text-neutral-700">{product.description}</p>

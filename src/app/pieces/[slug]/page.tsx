@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/product/ProductCard";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { products } from "@/data/products";
 import { seoCategories, getSeoCategory } from "@/data/seoCategories";
+import { getSeoModelsForCategory } from "@/data/seoModels";
 import { buildMetadata, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -39,6 +40,11 @@ export default function PiecesSeoPage({ params }: { params: { slug: string } }) 
   if (!page) notFound();
 
   const listed = getSeoProducts(params.slug);
+  const relatedModelGuides = Array.from(
+    new Map(
+      (page.categorySlugs ?? []).flatMap((slug) => getSeoModelsForCategory(slug)).map((item) => [item.slug, item]),
+    ).values(),
+  ).slice(0, 3);
   const faq = [
     {
       q: "Comment vérifier la compatibilité de la pièce avec mon véhicule ?",
@@ -77,6 +83,11 @@ export default function PiecesSeoPage({ params }: { params: { slug: string } }) 
           {page.internalLinks.map((l) => (
             <Link key={l.href} href={l.href} className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-brand-charcoal hover:border-brand-red hover:text-brand-red">
               {l.label}
+            </Link>
+          ))}
+          {relatedModelGuides.map((item) => (
+            <Link key={item.slug} href={`/modeles/${item.slug}`} className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-brand-charcoal hover:border-brand-red hover:text-brand-red">
+              {item.h1}
             </Link>
           ))}
         </div>

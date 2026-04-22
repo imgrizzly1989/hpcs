@@ -7,6 +7,7 @@ import { brands, getBrand } from "@/data/brands";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { buildMetadata } from "@/lib/seo";
+import { getSeoModelsForBrand } from "@/data/seoModels";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ slug: b.slug }));
@@ -27,6 +28,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   if (!brand) notFound();
   const list = products.filter((p) => p.compatibleVehicles.some((v) => v.brandSlug === brand.slug));
   const catsAvailable = Array.from(new Set(list.map((p) => p.category)));
+  const seoBrandModels = getSeoModelsForBrand(brand.slug);
 
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-6 py-8 md:py-12">
@@ -60,6 +62,19 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
               </Link>
             );
           })}
+        </div>
+      )}
+
+      {seoBrandModels.length > 0 && (
+        <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">Guides SEO marque</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {seoBrandModels.map((item) => (
+              <Link key={item.slug} href={`/modeles/${item.slug}`} className="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-semibold hover:border-brand-red hover:text-brand-red">
+                {item.h1}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 

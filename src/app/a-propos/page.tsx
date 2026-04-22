@@ -39,6 +39,17 @@ export default function AboutPage() {
       </section>
 
       <div className="mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 space-y-14">
+        <section className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-red">Entreprise basée à Casablanca</p>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-700">CHINAPAL opère depuis Casablanca avec une logistique pensée pour servir rapidement les demandes venant de tout le Maroc, aussi bien sur des pièces d&apos;entretien que sur des pièces de carrosserie.</p>
+          </div>
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-brand-red">Service pour particuliers et garages</p>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-700">Nous accompagnons les automobilistes, ateliers, garages et revendeurs qui recherchent une pièce compatible pour véhicule chinois avec validation rapide sur WhatsApp.</p>
+          </div>
+        </section>
+
         {/* Histoire */}
         <section>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-charcoal">Notre histoire</h2>

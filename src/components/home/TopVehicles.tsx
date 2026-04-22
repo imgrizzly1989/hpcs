@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getBrand } from "@/data/brands";
+import { getSeoModelByVehicle } from "@/data/seoModels";
 
 type TopVehicle = { brand: string; model: string; label: string };
 
@@ -31,10 +32,11 @@ export function TopVehicles() {
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
         {VEHICLES.map((v) => {
           const brand = getBrand(v.brand);
+          const seoModel = getSeoModelByVehicle(v.brand, v.model);
           return (
             <Link
               key={`${v.brand}-${v.model}`}
-              href={`/vehicule?brand=${v.brand}&model=${v.model}`}
+              href={seoModel ? `/modeles/${seoModel.slug}` : `/vehicule?brand=${v.brand}&model=${v.model}`}
               className="group flex flex-col rounded-2xl border border-neutral-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-brand-red hover:shadow-lg"
             >
               <div className="flex h-10 items-center">
