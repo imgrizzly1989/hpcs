@@ -62,9 +62,9 @@ export function Header() {
           <Image
             src="/images/chinapal-logo.jpg"
             alt="CHINAPAL"
-            width={220}
-            height={124}
-            className="h-11 w-auto rounded md:h-14"
+            width={300}
+            height={168}
+            className="h-14 w-auto rounded md:h-16"
             priority
           />
           <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-neutral-500">
