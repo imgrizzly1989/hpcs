@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <span className="relative block h-11 w-20 overflow-hidden rounded-lg">
-                <Image src="/images/chinapal-logo.jpg" alt="CHINAPAL" fill sizes="80px" className="object-cover" />
+                <Image src="/images/chinapal-logo.png" alt="CHINAPAL" fill sizes="80px" className="object-contain" />
               </span>
               <span className="font-display text-xl font-black text-white">CHINAPAL</span>
             </div>

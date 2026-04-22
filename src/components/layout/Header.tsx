@@ -60,7 +60,7 @@ export function Header() {
 
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/chinapal-logo.jpg"
+            src="/images/chinapal-logo.png"
             alt="CHINAPAL"
             width={420}
             height={236}
