@@ -87,11 +87,6 @@ export function getProductImage(name: string, category?: string): string | null 
     return "/images/products/carrosserie.jpg";
   }
 
-  for (const [re, key] of MATCHERS) {
-    if (re.test(name)) {
-      if (AVAILABLE.has(key)) return `/images/products/${key}.jpg`;
-      return null;
-    }
-  }
-  return null;
+  // User request: one shared image for all other auto parts.
+  return "/images/products/general-part.jpg";
 }
