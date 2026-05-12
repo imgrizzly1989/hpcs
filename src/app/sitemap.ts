@@ -5,6 +5,7 @@ import { categories } from "@/data/categories";
 import { seoCategories } from "@/data/seoCategories";
 import { seoModels } from "@/data/seoModels";
 import { seoPartModels } from "@/data/seoPartModels";
+import { seoCities } from "@/data/seoCities";
 import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,5 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...seoCategories.map((s) => ({ url: `${base}/pieces/${s.slug}`, lastModified: now })),
     ...seoModels.map((s) => ({ url: `${base}/modeles/${s.slug}`, lastModified: now })),
     ...seoPartModels.map((s) => ({ url: `${base}/recherche/${s.slug}`, lastModified: now })),
+    ...seoCities.map((s) => ({ url: `${base}/pieces-voitures-chinoises/${s.slug}`, lastModified: now })),
   ];
 }

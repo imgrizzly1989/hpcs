@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!b) return buildMetadata({ title: "Marque" });
   return buildMetadata({
     title: `Pièces ${b.name} au Maroc`,
-    description: `Pièces détachées d'origine pour voitures ${b.name} au Maroc. Devis WhatsApp et livraison 24-72h partout au Maroc.`,
+    description: `Pièces détachées compatibles pour voitures ${b.name} au Maroc. Devis WhatsApp, vérification VIN et livraison 24-72h partout au Maroc.`,
     path: `/marque/${b.slug}`,
   });
 }
