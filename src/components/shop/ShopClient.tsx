@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SlidersHorizontal, X } from "lucide-react";
 import { brands } from "@/data/brands";
 import { categories, carrosserieSubcategories } from "@/data/categories";
@@ -12,6 +12,7 @@ import type { Product } from "@/types";
 
 type Sort = "relevance" | "newest" | "nameAsc" | "nameDesc";
 type PositionFilter = "all" | "avant" | "arriere" | "gauche" | "droit";
+const PAGE_SIZE = 36;
 
 interface Props {
   initialCategory?: string;
@@ -30,6 +31,7 @@ export function ShopClient({ initialCategory, initialBrand, initialSubcategory, 
   const [inStockOnly, setInStockOnly] = useState(false);
   const [sort, setSort] = useState<Sort>("relevance");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const carrosserieSelected = selCats.length === 1 && selCats[0] === "carrosserie";
 
@@ -91,6 +93,13 @@ export function ShopClient({ initialCategory, initialBrand, initialSubcategory, 
     return list;
   }, [base, selCats, selBrands, selModels, selSub, position, carrosserieSelected, inStockOnly, sort]);
 
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [selCats, selBrands, selModels, selSub, position, inStockOnly, sort]);
+
+  const visibleProducts = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
   const toggle = (arr: string[], v: string, set: (n: string[]) => void) => {
     set(arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
   };
@@ -108,6 +117,7 @@ export function ShopClient({ initialCategory, initialBrand, initialSubcategory, 
         <ul className="grid grid-cols-2 gap-2">
           {brands.map((b) => {
             const c = brandCounts[b.slug] || 0;
+            if (c === 0 && !selBrands.includes(b.slug)) return null;
             return (
               <li key={b.slug}>
                 <label className={cn("flex cursor-pointer items-center gap-2 text-sm", c === 0 && "opacity-50")}>
@@ -151,6 +161,7 @@ export function ShopClient({ initialCategory, initialBrand, initialSubcategory, 
         <ul className="space-y-2">
           {categories.map((c) => {
             const n = catCounts[c.slug] || 0;
+            if (n === 0 && !selCats.includes(c.slug)) return null;
             return (
               <li key={c.slug}>
                 <label className={cn("flex cursor-pointer items-center gap-2 text-sm", n === 0 && "opacity-50")}>
@@ -264,7 +275,20 @@ export function ShopClient({ initialCategory, initialBrand, initialSubcategory, 
           </div>
         )}
 
-        <ProductGrid products={filtered} />
+        <ProductGrid products={visibleProducts} />
+        {hasMore && (
+          <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-center">
+            <p className="text-sm text-neutral-600">
+              {visibleProducts.length} produits affichés sur {filtered.length}. Affinez par marque/modèle pour trouver plus vite.
+            </p>
+            <button
+              onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+              className="rounded-xl bg-brand-charcoal px-5 py-3 text-sm font-bold text-white transition hover:bg-black"
+            >
+              Charger 36 références de plus
+            </button>
+          </div>
+        )}
       </div>
 
       {/* mobile drawer */}

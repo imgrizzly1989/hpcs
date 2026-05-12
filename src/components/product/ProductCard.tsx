@@ -76,6 +76,11 @@ export function ProductCard({ product, photoUrl }: { product: Product; photoUrl?
                 </span>
               </div>
               <div className="absolute bottom-2 right-3 text-[10px] font-bold tracking-widest text-neutral-300">CHINAPAL</div>
+              {product.category === "carrosserie" && (
+                <div className="absolute left-3 right-3 top-14 z-10 rounded-md bg-white/90 px-2 py-1 text-center text-[10px] font-semibold text-neutral-600 shadow-sm">
+                  Image illustrative · VIN requis
+                </div>
+              )}
             </>
           ) : (
             <ProductVisual product={product} size="card" />
@@ -106,6 +111,11 @@ export function ProductCard({ product, photoUrl }: { product: Product; photoUrl?
         </Link>
         {compatLabel && (
           <p className="mt-1 line-clamp-1 text-xs text-neutral-500">Compatible : {compatLabel}</p>
+        )}
+        {product.category === "carrosserie" && (
+          <p className="mt-2 rounded-lg bg-red-50 px-2 py-1 text-[11px] font-semibold text-brand-red">
+            Compatibilité confirmée par VIN avant commande
+          </p>
         )}
         <div className="mt-3 flex-1" />
         <PriceOnRequest size="sm" className="text-brand-charcoal" />

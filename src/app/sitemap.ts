@@ -5,9 +5,10 @@ import { categories } from "@/data/categories";
 import { seoCategories } from "@/data/seoCategories";
 import { seoModels } from "@/data/seoModels";
 import { seoPartModels } from "@/data/seoPartModels";
+import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const base = getSiteUrl();
   const staticPaths = [
     "", "/boutique", "/vehicule", "/panier", "/favoris", "/connexion", "/inscription",
     "/compte", "/faq", "/contact", "/a-propos", "/livraison-retours", "/confidentialite", "/conditions",

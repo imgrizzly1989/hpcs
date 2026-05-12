@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 const steps = [
   { Icon: Car, title: "Choisissez votre véhicule", text: "Sélectionnez marque, modèle, année et motorisation." },
-  { Icon: Search, title: "Trouvez votre pièce", text: "Parcourez notre catalogue ou cherchez par référence OEM." },
+  { Icon: Search, title: "Trouvez votre pièce", text: "Parcourez le catalogue, cherchez par référence CHINAPAL ou envoyez une référence OEM à vérifier." },
   { Icon: MessageCircle, title: "Contactez-nous sur WhatsApp", text: "Confirmez la disponibilité et recevez votre devis." },
   { Icon: Truck, title: "Livraison au Maroc", text: "Paiement à la livraison dans toutes les villes du Maroc." },
 ];

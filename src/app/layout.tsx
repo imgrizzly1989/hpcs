@@ -7,17 +7,18 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { WhatsAppFAB } from "@/components/layout/WhatsAppFAB";
 import { ToastProvider } from "@/components/ui/ToastProvider";
 import { localBusinessJsonLd } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export const metadata: Metadata = {
   title: {
-    default: "CHINAPAL — Pièces d'origine pour voitures chinoises au Maroc | Chery Geely Haval MG BYD",
+    default: "CHINAPAL — Pièces compatibles pour voitures chinoises au Maroc | Chery Geely Haval MG BYD",
     template: "%s | CHINAPAL",
   },
-  description: "CHINAPAL : pièces automobiles d'origine pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW. Devis WhatsApp en 24h, livraison partout au Maroc.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  description: "CHINAPAL : pièces automobiles compatibles pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW. Devis WhatsApp en 24h, livraison partout au Maroc.",
+  metadataBase: new URL(getSiteUrl()),
   icons: { icon: "/favicon.svg" },
 };
 

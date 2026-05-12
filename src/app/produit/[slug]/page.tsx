@@ -107,7 +107,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           )}
 
           <p className="mt-2 text-sm text-neutral-500">
-            Réf. OEM : <span className="font-mono text-brand-charcoal">{product.reference}</span>
+            Référence CHINAPAL : <span className="font-mono text-brand-charcoal">{product.reference}</span>
+            <span className="ml-2 text-xs text-neutral-400">OEM exact confirmé par VIN avant commande</span>
           </p>
 
           {/* Price-on-request block */}

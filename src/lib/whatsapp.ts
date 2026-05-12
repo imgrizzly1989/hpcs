@@ -1,5 +1,7 @@
-const NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "212600000000";
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+import { DEFAULT_WHATSAPP_NUMBER, getSiteUrl } from "@/lib/site";
+
+const NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER;
+const SITE = getSiteUrl();
 
 export function buildWhatsAppLink(opts: {
   productName?: string;

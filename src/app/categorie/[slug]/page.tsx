@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as Icons from "lucide-react";
-import { MessageCircle } from "lucide-react";
+import { CheckCircle2, MapPin, MessageCircle, ShieldCheck, Truck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ShopClient } from "@/components/shop/ShopClient";
@@ -49,16 +49,22 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Catégories" }, { label: "Carrosserie" }]} />
 
         {/* Hero */}
-        <section className="mt-4 rounded-3xl bg-gradient-to-br from-brand-charcoal via-neutral-900 to-brand-charcoal p-8 md:p-12 text-white">
+        <section className="mt-4 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-charcoal via-neutral-900 to-brand-charcoal p-8 text-white shadow-2xl md:p-12">
           <p className="text-xs font-bold uppercase tracking-widest text-brand-red">CARROSSERIE</p>
           <h1 className="mt-2 font-display text-3xl md:text-5xl font-bold tracking-tight">
             Pièces de carrosserie pour voitures chinoises au Maroc
           </h1>
           <p className="mt-4 max-w-3xl text-neutral-300 leading-relaxed">
-            Pare-chocs, phares, rétroviseurs, calandres, ailes, capots, portes, essuie-glaces et vitrages —
-            plus de {list.length} références pour Chery, MG, Geely, Haval, Changan et les autres marques chinoises.
-            Compatibilité vérifiée par VIN, garantie CHINAPAL.
+            Pare-chocs, phares, rétroviseurs, calandres, ailes, capots, portes, essuie-glaces et vitrages —{" "}
+            {list.length} références catalogue pour Chery, MG, Geely, Haval, Changan, BYD et autres marques chinoises.
+            Prix sur demande, validation par VIN et livraison depuis Casablanca partout au Maroc.
           </p>
+          <div className="mt-5 grid gap-2 text-sm text-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
+            <span className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2"><MapPin className="h-4 w-4 text-brand-red" /> Casablanca · Maroc</span>
+            <span className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2"><ShieldCheck className="h-4 w-4 text-brand-red" /> VIN avant envoi</span>
+            <span className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2"><Truck className="h-4 w-4 text-brand-red" /> Emballage protégé</span>
+            <span className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4 text-brand-red" /> Retour si erreur VIN</span>
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je cherche une pièce de carrosserie." })}
@@ -117,6 +123,25 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           <div className="rounded-2xl border border-neutral-200 bg-white p-4 text-sm">
             <p className="font-bold text-brand-charcoal">Retour garanti</p>
             <p className="mt-1 text-neutral-600">Si la pièce n&apos;est pas compatible, remboursement ou échange immédiat.</p>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-3xl border border-neutral-200 bg-white p-6 md:p-8">
+          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-red">Comment commander sans erreur</p>
+              <h2 className="mt-2 font-display text-2xl font-bold text-brand-charcoal">Envoyez le VIN, pas seulement la photo de la pièce</h2>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Les carrosseries chinoises changent selon année, finition et marché. CHINAPAL vérifie le numéro de châssis avant devis pour éviter les pare-chocs, phares ou rétroviseurs incompatibles.
+              </p>
+            </div>
+            <a
+              href={buildWhatsAppLink({ message: "Bonjour CHINAPAL, je veux vérifier une pièce de carrosserie. VIN : [coller VIN]. Voiture : [marque/modèle/année]. Pièce : [décrire]." })}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#1ebe57]"
+            >
+              <MessageCircle className="h-5 w-5" /> Vérifier ma pièce par VIN
+            </a>
           </div>
         </section>
 
