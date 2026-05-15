@@ -19,6 +19,22 @@ export const metadata: Metadata = {
   },
   description: "CHINAPAL : pièces automobiles compatibles pour voitures chinoises au Maroc. Chery, Geely, MG, Haval, BYD, DFSK, JAC, Great Wall, BAIC, Dongfeng, Jetour, FAW. Devis WhatsApp en 24h, livraison partout au Maroc.",
   metadataBase: new URL(getSiteUrl()),
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "CHINAPAL — Pièces compatibles pour voitures chinoises au Maroc",
+    description: "Pièces Chery, Geely, MG, Haval, BYD, JAC et DFSK au Maroc. Vérification VIN, devis WhatsApp et livraison nationale depuis Casablanca.",
+    url: getSiteUrl(),
+    siteName: "CHINAPAL",
+    locale: "fr_MA",
+    type: "website",
+    images: [{ url: "/images/chinapal-logo.jpg", width: 1200, height: 630, alt: "CHINAPAL pièces automobiles chinoises au Maroc" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CHINAPAL — Pièces voitures chinoises Maroc",
+    description: "Vérification VIN, devis WhatsApp et livraison nationale pour pièces de voitures chinoises au Maroc.",
+    images: ["/images/chinapal-logo.jpg"],
+  },
   icons: { icon: "/favicon.svg" },
 };
 

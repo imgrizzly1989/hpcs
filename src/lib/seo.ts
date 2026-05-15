@@ -81,8 +81,8 @@ export function localBusinessJsonLd() {
     "@type": "AutoPartsStore",
     name: "CHINAPAL",
     url: SITE,
-    telephone: "+212****2999",
-    areaServed: "MA",
+    telephone: "+212650542999",
+    areaServed: ["Casablanca", "Rabat", "Tanger", "Marrakech", "Fès", "Agadir", "Meknès", "Oujda", "Kénitra", "Tétouan", "El Jadida"],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -106,7 +106,9 @@ export function localBusinessJsonLd() {
       addressCountry: "MA",
     },
     description:
-      "Spécialiste des pièces automobiles pour voitures chinoises au Maroc : carrosserie, freinage, suspension, filtration et pièces moteur.",
+      "Spécialiste basé à Casablanca pour la vérification, le sourcing et la livraison de pièces compatibles pour voitures chinoises au Maroc : carrosserie, éclairage, freinage, suspension, filtration et pièces moteur.",
+    image: `${SITE}/images/chinapal-logo.jpg`,
+    priceRange: "Prix sur demande",
     sameAs: ["https://wa.me/212650542999"],
     serviceArea: {
       "@type": "Country",

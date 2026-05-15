@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const staticPaths = [
     "", "/boutique", "/vehicule", "/panier", "/favoris", "/connexion", "/inscription",
-    "/compte", "/faq", "/contact", "/a-propos", "/livraison-retours", "/confidentialite", "/conditions",
+    "/compte", "/faq", "/contact", "/a-propos", "/livraison-retours", "/verification-vin", "/garages-carrosseries", "/confidentialite", "/conditions",
   ];
   const now = new Date();
   return [

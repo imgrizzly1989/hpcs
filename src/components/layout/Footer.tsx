@@ -45,6 +45,8 @@ export function Footer() {
               <li><Link href="/pieces/pare-choc-maroc" className="hover:text-brand-red">Pare-chocs Maroc</Link></li>
               <li><Link href="/pieces/phares-maroc" className="hover:text-brand-red">Phares Maroc</Link></li>
               <li><Link href="/pieces/filtres-maroc" className="hover:text-brand-red">Filtres Maroc</Link></li>
+              <li><Link href="/verification-vin" className="hover:text-brand-red">Vérification VIN</Link></li>
+              <li><Link href="/garages-carrosseries" className="hover:text-brand-red">Garages & carrosseries</Link></li>
               <li><Link href="/faq" className="hover:text-brand-red">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-brand-red">Contact</Link></li>
               <li><Link href="/a-propos" className="hover:text-brand-red">À propos</Link></li>
