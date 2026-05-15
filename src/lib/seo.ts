@@ -30,7 +30,6 @@ export function buildMetadata(opts: { title: string; description?: string; path?
 export function productJsonLd(p: Product) {
   // NOTE: intentionally no price offers since we show "Prix sur demande".
   const image = p.image || p.images?.[0] || getProductImage(p.name, p.category) || "/images/products/general-part.jpg";
-  const availability = p.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/PreOrder";
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -39,14 +38,8 @@ export function productJsonLd(p: Product) {
     description: p.description,
     sku: p.reference,
     brand: { "@type": "Brand", name: "CHINAPAL" },
-    offers: {
-      "@type": "Offer",
-      url: `${SITE}/produit/${p.slug}`,
-      priceCurrency: "MAD",
-      priceSpecification: { "@type": "PriceSpecification", priceCurrency: "MAD", description: "Prix sur demande après vérification VIN" },
-      availability,
-      seller: { "@type": "AutoPartsStore", name: "CHINAPAL" },
-    },
+    // No Offer object here: prices are intentionally quote-only after VIN/photo validation.
+    // Adding a fake numeric price would be misleading; omitting offers avoids invalid Product structured data.
   };
 }
 

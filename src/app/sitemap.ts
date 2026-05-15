@@ -10,9 +10,11 @@ import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
+  // Keep transactional/account utility pages out of XML sitemap; crawlers can still discover them,
+  // but the sitemap should prioritize indexable SEO and trust pages.
   const staticPaths = [
-    "", "/boutique", "/vehicule", "/panier", "/favoris", "/connexion", "/inscription",
-    "/compte", "/faq", "/contact", "/a-propos", "/livraison-retours", "/verification-vin", "/garages-carrosseries", "/confidentialite", "/conditions",
+    "", "/boutique", "/vehicule", "/faq", "/contact", "/a-propos", "/livraison-retours",
+    "/verification-vin", "/garages-carrosseries", "/confidentialite", "/conditions",
   ];
   const now = new Date();
   return [
